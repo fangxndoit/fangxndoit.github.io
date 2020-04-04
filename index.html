@@ -286,6 +286,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/04/网站变灰/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/04/04/网站变灰/" class="post-title-link" itemprop="url">网站变灰</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-04-04 23:12:50 / Modified: 23:29:14" itemprop="dateCreated datePublished" datetime="2020-04-04T23:12:50+08:00">2020-04-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>可以看到今天很多APP图标，网站内容都变成了灰色调。</p>
+<h4 id="主要实现"><a href="#主要实现" class="headerlink" title="主要实现"></a>主要实现</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-class">.gray</span>&#123;</span><br><span class="line">  <span class="attribute">webkit-filter</span>: <span class="built_in">grayscale</span>(.95);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其他网站的兼容样式 CSDN</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-moz-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-ms-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-o-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">BasicImage</span>(grayscale=1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter" target="_blank" rel="noopener">引用 MDN https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter</a></p>
+<h5 id="官方介绍内容如下"><a href="#官方介绍内容如下" class="headerlink" title="官方介绍内容如下"></a>官方介绍内容如下</h5><p><strong><code>filter</code></strong> CSS 属性将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像，背景和边框的渲染</p>
+<h5 id="使用用例"><a href="#使用用例" class="headerlink" title="使用用例"></a>使用用例</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* URL to SVG filter */</span></span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">url</span>("<span class="selector-tag">filters</span><span class="selector-class">.svg</span><span class="selector-id">#filter-id</span>");</span><br><span class="line"></span><br><span class="line"><span class="comment">/* &lt;filter-function&gt; values */</span></span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">blur</span>(5<span class="selector-tag">px</span>);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">brightness</span>(0<span class="selector-class">.4</span>);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">contrast</span>(200%);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">drop-shadow</span>(16<span class="selector-tag">px</span> 16<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> <span class="selector-tag">blue</span>);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">grayscale</span>(50%);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">hue-rotate</span>(90<span class="selector-tag">deg</span>);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">invert</span>(75%);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">opacity</span>(25%);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">saturate</span>(30%);</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">sepia</span>(60%);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Multiple filters */</span></span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">contrast</span>(175%) <span class="selector-tag">brightness</span>(3%);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Global values */</span></span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">inherit</span>;</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">initial</span>;</span><br><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">unset</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="使用-blur-设置高斯模糊"><a href="#使用-blur-设置高斯模糊" class="headerlink" title="使用 blur 设置高斯模糊"></a>使用 blur 设置高斯模糊</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">blur</span>(<span class="selector-tag">radius</span>)</span><br></pre></td></tr></table></figure>
+<p>给图像设置高斯模糊。radius 一值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起，所以值越大越模糊；如果没有设定值，则默认是 0；这个参数可设置绝对像素值，但不接受百分比值</p>
+<h5 id="使用-blur-设置灰色调"><a href="#使用-blur-设置灰色调" class="headerlink" title="使用 blur 设置灰色调"></a>使用 blur 设置灰色调</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">filter</span>: <span class="selector-tag">grayscale</span>(<span class="selector-tag">percent</span>)</span><br></pre></td></tr></table></figure>
+<p>将图像转换为灰度图像。值定义转换的比例。percent 值为 100% 则完全转为灰度图像，值为 0% 图像无变化。值在 0% 到 100% 之间，则是效果的线性乘子。若未设置，值默认是 0。另外除了传递百分比，还可以传递浮点数，效果是一样的</p>
+<p>使用及兼容</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//在想要置灰的节点添加 gary 这个类即可</span><br><span class="line"><span class="selector-class">.gray</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-moz-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-ms-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">-o-filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(100%);</span><br><span class="line">    <span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">BasicImage</span>(grayscale=1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/03/4-4新冠肺炎疫哀悼情/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1679,7 +1836,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1700,7 +1857,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
