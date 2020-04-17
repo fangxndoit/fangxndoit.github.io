@@ -96,20 +96,13 @@
 
 
 
-  <meta name="description" content="翻译   状态 结果     new vue 创建vue实例   init events &amp;amp; lifecycle 开始初始化   beforeCreate 组件刚被创建，组建属性计算之前，如data属性等   init injections &amp;amp; reactivity 通过依赖注入导入依赖项   created 组件实例创建完成，属性已绑定，此时DOM还未生成   el属性 检查v">
-<meta name="keywords" content="vue,生命周期">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue生命周期">
-<meta property="og:url" content="http://yoursite.com/2019/05/28/vue生命周期/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="my blog!">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="翻译   状态 结果     new vue 创建vue实例   init events &amp;amp; lifecycle 开始初始化   beforeCreate 组件刚被创建，组建属性计算之前，如data属性等   init injections &amp;amp; reactivity 通过依赖注入导入依赖项   created 组件实例创建完成，属性已绑定，此时DOM还未生成   el属性 检查v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2020-03-25T09:42:43.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue生命周期">
-<meta name="twitter:description" content="翻译   状态 结果     new vue 创建vue实例   init events &amp;amp; lifecycle 开始初始化   beforeCreate 组件刚被创建，组建属性计算之前，如data属性等   init injections &amp;amp; reactivity 通过依赖注入导入依赖项   created 组件实例创建完成，属性已绑定，此时DOM还未生成   el属性 检查v">
-<meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
+<meta name="twitter:title" content="my blog!">
 
 
 
@@ -117,7 +110,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/28/vue生命周期/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
@@ -127,7 +120,7 @@
   };
 </script>
 
-  <title>vue生命周期 | my blog!</title>
+  <title>my blog!</title>
   
 
 
@@ -175,7 +168,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,9 +269,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -309,8 +303,10 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue生命周期
-
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/28/vue生命周期/" class="post-title-link" itemprop="url">vue生命周期</a>
               
             
           </h1>
@@ -386,7 +382,9 @@
       
 
       
-        <p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期"></p>
+        
+          
+            <p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期"></p>
 <h4 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h4><table>
 <thead>
 <tr>
@@ -466,6 +464,8 @@
 <li>在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的 DOM 结构的时候，这个操作都应该放<br>进 Vue.nextTick() 的回调函数中。</li>
 </ol>
 
+          
+        
       
     </div>
 
@@ -486,36 +486,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/vue-生命周期/" rel="tag"># vue,生命周期</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/28/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -525,15 +503,18 @@
   </article>
 
 
-  </div>
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -553,17 +534,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -630,23 +602,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#翻译"><span class="nav-number">1.</span> <span class="nav-text">翻译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期的历程"><span class="nav-number">2.</span> <span class="nav-text">生命周期的历程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候需要用到Vue-nextTick"><span class="nav-number">3.</span> <span class="nav-text">什么时候需要用到Vue.nextTick()</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -778,10 +733,6 @@
 
 
   
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
 
   
 
@@ -797,8 +748,6 @@
 
   
 
-
-  
 
 
   
