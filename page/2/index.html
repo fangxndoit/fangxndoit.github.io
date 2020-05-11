@@ -286,153 +286,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/hello-world/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="哧溜"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my blog!"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/28/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-28 11:00:31" itemprop="dateCreated datePublished" datetime="2019-05-28T11:00:31+08:00">2019-05-28</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/javascript 事件托管/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -525,6 +378,239 @@
 </ul>
 <h4 id="常见例子"><a href="#常见例子" class="headerlink" title="常见例子"></a>常见例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'menu'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//兼容IE</span></span><br><span class="line">    e = e || <span class="built_in">window</span>.event;</span><br><span class="line">    <span class="keyword">var</span> target = e.target || e.srcElement;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (target.nodeName !== <span class="string">'A'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ... <span class="comment">// 需要对a标签所做的处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//兼容IE</span></span><br><span class="line">    e = e || <span class="built_in">window</span>.event;</span><br><span class="line">    <span class="keyword">var</span> target = e.target || e.srcElement,</span><br><span class="line">        targetNodeName = target.nodeName;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (targetNodeName == <span class="string">'A'</span>) &#123;</span><br><span class="line">        <span class="comment">// 一些处理...</span></span><br><span class="line">    &#125;elseif(targetNodeName == <span class="string">'li'</span>)&#123;</span><br><span class="line">        <span class="comment">// 一些处理...</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 一些处理...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/vue生命周期/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/28/vue生命周期/" class="post-title-link" itemprop="url">vue生命周期</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-28 11:00:31" itemprop="dateCreated datePublished" datetime="2019-05-28T11:00:31+08:00">2019-05-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-25 17:42:43" itemprop="dateModified" datetime="2020-03-25T17:42:43+08:00">2020-03-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期"></p>
+<h4 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h4><table>
+<thead>
+<tr>
+<th>状态</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new vue</td>
+<td>创建vue实例</td>
+</tr>
+<tr>
+<td>init events &amp; lifecycle</td>
+<td>开始初始化</td>
+</tr>
+<tr>
+<td>beforeCreate</td>
+<td>组件刚被创建，组建属性计算之前，如data属性等</td>
+</tr>
+<tr>
+<td>init injections &amp; reactivity</td>
+<td>通过依赖注入导入依赖项</td>
+</tr>
+<tr>
+<td>created</td>
+<td>组件实例创建完成，属性已绑定，此时DOM还未生成</td>
+</tr>
+<tr>
+<td>el属性</td>
+<td>检查vue配置，即new Vue{}里面的el项是否存在，有就继续检查template项。没有则等到手动绑定调用vm.$mount()</td>
+</tr>
+<tr>
+<td>template</td>
+<td>检查配置中的template项，如果没有template进行填充被绑定区域，则被绑定区域的el对象的outerHTML（即整个#app DOM对象，包括<div id="”app”">和</div>标签）都作为被填充对象替换掉填充区域</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>模板编译、挂载之前</td>
+</tr>
+<tr>
+<td>create vm.$el and replace “el” with it</td>
+<td>编译，并替换了被绑定元素</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>编译、挂载</td>
+</tr>
+<tr>
+<td>Before update</td>
+<td>组件更新之前</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>组件更新之后</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>当vm.$destroy()被调用，开始拆卸组件和监听器，生命周期终结</td>
+</tr>
+</tbody>
+</table>
+<p>[表格标题]</p>
+<h4 id="生命周期的历程"><a href="#生命周期的历程" class="headerlink" title="生命周期的历程"></a>生命周期的历程</h4><ul>
+<li>new Vue： 创建vue实例</li>
+<li>beforecreated： 监测数据，初始化事件</li>
+<li>created：绑定数据和事件，此时可以访问修改data，访问methods</li>
+<li>beforeMount： 模板编译，生成 dom 但未挂载</li>
+<li>mounted： 编译，挂载，实例数据在dom上渲染</li>
+<li>beforeUpdate： 数据更新，但不进行DOM重新渲染</li>
+<li>updated： 更新数据，进行dom渲染</li>
+<li>beforeDestory： 实例销毁</li>
+<li>destroyed： 实例销毁，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</li>
+</ul>
+<h4 id="什么时候需要用到Vue-nextTick"><a href="#什么时候需要用到Vue-nextTick" class="headerlink" title="什么时候需要用到Vue.nextTick()"></a>什么时候需要用到Vue.nextTick()</h4><ol>
+<li>在 Vue 生命周期的 created() 钩子函数进行的 DOM 操作一定要放在 Vue.nextTick() 的回调函数中。原因是什么呢，原因是<br>在 created() 钩子函数执行的时候 DOM 其实并未进行任何渲染，而此时进行 DOM 操作无异于徒劳，所以此处一定要将 DOM 操作<br>的 js 代码放进 Vue.nextTick() 的回调函数中。与之对应的就是 mounted 钩子函数，因为该钩子函数执行时所有的 DOM 挂载和<br>渲染都已完成，此时在该钩子函数中进行任何DOM操作都不会有问题 。</li>
+<li>在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的 DOM 结构的时候，这个操作都应该放<br>进 Vue.nextTick() 的回调函数中。</li>
+</ol>
+
           
         
       
