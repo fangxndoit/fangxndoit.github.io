@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="改变输入框内提示文字颜色123456789101112131415::-webkit-input-placeholder&amp;#123; /* WebKit browsers */  color: #999;&amp;#125;:-moz-placeholder&amp;#123; /* Mozilla Firefox 4 to 18 */  color: #999;&amp;#125;::-moz-placeholder&amp;">
-<meta name="keywords" content="css">
+  <meta name="description" content="forEach12345678910111213141516//例子let arr1 = [&amp;#123;  name: &apos;zhang&apos;, age: 20&amp;#125;,&amp;#123;  name: &apos;li&apos;, age: 19&amp;#125;]arr1.forEach(item=&amp;gt; item.age = item.age+10)// [&amp;#123;naem:&apos;zhang&apos;,age:20&amp;#125;,&amp;">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常见css">
-<meta property="og:url" content="http://yoursite.com/2020/05/11/常见css/index.html">
+<meta property="og:title" content="遍历">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/遍历/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="改变输入框内提示文字颜色123456789101112131415::-webkit-input-placeholder&amp;#123; /* WebKit browsers */  color: #999;&amp;#125;:-moz-placeholder&amp;#123; /* Mozilla Firefox 4 to 18 */  color: #999;&amp;#125;::-moz-placeholder&amp;">
+<meta property="og:description" content="forEach12345678910111213141516//例子let arr1 = [&amp;#123;  name: &apos;zhang&apos;, age: 20&amp;#125;,&amp;#123;  name: &apos;li&apos;, age: 19&amp;#125;]arr1.forEach(item=&amp;gt; item.age = item.age+10)// [&amp;#123;naem:&apos;zhang&apos;,age:20&amp;#125;,&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-11T02:49:25.304Z">
+<meta property="og:updated_time" content="2020-05-12T15:37:13.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常见css">
-<meta name="twitter:description" content="改变输入框内提示文字颜色123456789101112131415::-webkit-input-placeholder&amp;#123; /* WebKit browsers */  color: #999;&amp;#125;:-moz-placeholder&amp;#123; /* Mozilla Firefox 4 to 18 */  color: #999;&amp;#125;::-moz-placeholder&amp;">
+<meta name="twitter:title" content="遍历">
+<meta name="twitter:description" content="forEach12345678910111213141516//例子let arr1 = [&amp;#123;  name: &apos;zhang&apos;, age: 20&amp;#125;,&amp;#123;  name: &apos;li&apos;, age: 19&amp;#125;]arr1.forEach(item=&amp;gt; item.age = item.age+10)// [&amp;#123;naem:&apos;zhang&apos;,age:20&amp;#125;,&amp;">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/05/11/常见css/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/12/遍历/"/>
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>常见css | my blog!</title>
+  <title>遍历 | my blog!</title>
   
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/常见css/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/遍历/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="哧溜"/>
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">常见css
+          <h1 class="post-title" itemprop="name headline">遍历
 
               
             
@@ -333,7 +333,7 @@
                 
               
 
-              <time title="Created: 2020-05-11 10:26:37 / Modified: 10:49:25" itemprop="dateCreated datePublished" datetime="2020-05-11T10:26:37+08:00">2020-05-11</time>
+              <time title="Created: 2020-05-12 23:17:57 / Modified: 23:37:13" itemprop="dateCreated datePublished" datetime="2020-05-12T23:17:57+08:00">2020-05-12</time>
             
 
             
@@ -372,9 +372,18 @@
       
 
       
-        <h4 id="改变输入框内提示文字颜色"><a href="#改变输入框内提示文字颜色" class="headerlink" title="改变输入框内提示文字颜色"></a>改变输入框内提示文字颜色</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::-webkit-input-placeholder</span>&#123; <span class="comment">/* WebKit browsers */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">:-moz-placeholder</span>&#123; <span class="comment">/* Mozilla Firefox 4 to 18 */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::-moz-placeholder</span>&#123; <span class="comment">/* Mozilla Firefox 19+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">:-ms-input-placeholder</span>&#123; <span class="comment">/* Internet Explorer 10+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">::-webkit-input-placeholder</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:<span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="多行省略"><a href="#多行省略" class="headerlink" title="多行省略"></a>多行省略</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ellipsis</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: box <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">4</span>;<span class="comment">/*第几行出现省略号*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="移动端html标签几个体验优化"><a href="#移动端html标签几个体验优化" class="headerlink" title="移动端html标签几个体验优化"></a>移动端html标签几个体验优化</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="attribute">overflow</span>: hidden;<span class="comment">/*手机上写overflow-x:hidden;会有兼容性问题，如果子级如果是绝对定位有运动到屏幕外的话ios7系统会出现留白*/</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">-webkit-overflow-scrolling</span>:touch;<span class="comment">/*流畅滚动,ios7下会有滑一下滑不动的情况，所以需要写上*/</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">position</span>:realtive;<span class="comment">/*直接子级如果是绝对定位有运动到屏幕外的话，会出现留白*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [&#123;</span><br><span class="line">  name: <span class="string">'zhang'</span>, <span class="attr">age</span>: <span class="number">20</span></span><br><span class="line">&#125;,&#123;</span><br><span class="line">  name: <span class="string">'li'</span>, <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;]</span><br><span class="line">arr1.forEach(<span class="function"><span class="params">item</span>=&gt;</span> item.age = item.age+<span class="number">10</span>)</span><br><span class="line"><span class="comment">// [&#123;naem:'zhang',age:20&#125;,&#123;name:'li',age:29&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr2.forEach(<span class="function"><span class="params">item</span>=&gt;</span>item = item*<span class="number">2</span>)</span><br><span class="line"><span class="comment">//arr2 = [1,2,3]</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].forEach(<span class="function"><span class="params">item</span>=&gt;</span><span class="built_in">console</span>.log(item))</span><br><span class="line">	.filter(<span class="function"><span class="params">item</span>=&gt;</span> item&gt;<span class="number">2</span>)</span><br><span class="line"><span class="comment">//Uncaught TypeError: Cannot read property 'filter' of undefined</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当数组中的元素是值类型，forEach不会改变数组；当数组是引用类型，则会改变数组</li>
+<li>不支持链式操作</li>
+</ul>
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1.map(<span class="function"><span class="params">item</span>=&gt;</span>item*<span class="number">2</span>)</span><br><span class="line"><span class="comment">// arr1=[1,2,3] arr2=[2,4,6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">if</span>(item &gt; <span class="number">3</span>) <span class="keyword">return</span> item &#125;)</span><br><span class="line"><span class="comment">// =&gt; [undefined, undefined, undefined, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>map会创建新的数组。</li>
+<li>map 函数是对每个元素都执行相应的回调，所以必须使用return，不建议用于处理过滤</li>
+</ul>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter(<span class="function"><span class="params">item</span> =&gt;</span> item&gt;<span class="number">3</span>)</span><br><span class="line"><span class="comment">// arr1=[4,5]</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -397,7 +406,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -410,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/22/判断是否在时间段内/" rel="next" title="判断是否在时间段内">
-                <i class="fa fa-chevron-left"></i> 判断是否在时间段内
+              <a href="/2020/05/11/常见css/" rel="next" title="常见css">
+                <i class="fa fa-chevron-left"></i> 常见css
               </a>
             
           </div>
@@ -419,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/12/遍历/" rel="prev" title="遍历">
-                遍历 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#改变输入框内提示文字颜色"><span class="nav-number">1.</span> <span class="nav-text">改变输入框内提示文字颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行省略"><span class="nav-number">2.</span> <span class="nav-text">多行省略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端html标签几个体验优化"><span class="nav-number">3.</span> <span class="nav-text">移动端html标签几个体验优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#forEach"><span class="nav-number">1.</span> <span class="nav-text">forEach</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">2.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">3.</span> <span class="nav-text">filter</span></a></li></ol></div>
             
 
           </div>
