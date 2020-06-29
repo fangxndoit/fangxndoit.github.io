@@ -286,6 +286,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/遍历/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/05/12/遍历/" class="post-title-link" itemprop="url">遍历</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-05-12 23:17:57" itemprop="dateCreated datePublished" datetime="2020-05-12T23:17:57+08:00">2020-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-05-19 14:17:20" itemprop="dateModified" datetime="2020-05-19T14:17:20+08:00">2020-05-19</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [&#123;</span><br><span class="line">  name: <span class="string">'zhang'</span>, <span class="attr">age</span>: <span class="number">20</span></span><br><span class="line">&#125;,&#123;</span><br><span class="line">  name: <span class="string">'li'</span>, <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;]</span><br><span class="line">arr1.forEach(<span class="function"><span class="params">item</span>=&gt;</span> item.age = item.age+<span class="number">10</span>)</span><br><span class="line"><span class="comment">// [&#123;naem:'zhang',age:20&#125;,&#123;name:'li',age:29&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr2.forEach(<span class="function"><span class="params">item</span>=&gt;</span>item = item*<span class="number">2</span>)</span><br><span class="line"><span class="comment">//arr2 = [1,2,3]</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].forEach(<span class="function"><span class="params">item</span>=&gt;</span><span class="built_in">console</span>.log(item))</span><br><span class="line">	.filter(<span class="function"><span class="params">item</span>=&gt;</span> item&gt;<span class="number">2</span>)</span><br><span class="line"><span class="comment">//Uncaught TypeError: Cannot read property 'filter' of undefined</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当数组中的元素是值类型，forEach不会改变数组；当数组是引用类型，则会改变数组</li>
+<li>不支持链式操作</li>
+</ul>
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1.map(<span class="function"><span class="params">item</span>=&gt;</span>item*<span class="number">2</span>)</span><br><span class="line"><span class="comment">// arr1=[1,2,3] arr2=[2,4,6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">if</span>(item &gt; <span class="number">3</span>) <span class="keyword">return</span> item &#125;)</span><br><span class="line"><span class="comment">// =&gt; [undefined, undefined, undefined, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>map会创建新的数组。</li>
+<li>map 函数是对每个元素都执行相应的回调，所以必须使用return，不建议用于处理过滤</li>
+</ul>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter(<span class="function"><span class="params">item</span> =&gt;</span> item&gt;<span class="number">3</span>)</span><br><span class="line"><span class="comment">// arr1=[4,5]</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/常见css/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1725,163 +1890,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/vue相关小知识/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="哧溜"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my blog!"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/03/25/vue相关小知识/" class="post-title-link" itemprop="url">vue小知识</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-03-25 17:43:26 / Modified: 17:55:48" itemprop="dateCreated datePublished" datetime="2020-03-25T17:43:26+08:00">2020-03-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="不要在同个元素上同时使用-v-if-和-v-if-指令"><a href="#不要在同个元素上同时使用-v-if-和-v-if-指令" class="headerlink" title="不要在同个元素上同时使用 v-if 和 v-if 指令"></a>不要在同个元素上同时使用 <font color="red">v-if</font> 和 <font color="red">v-if</font> 指令</h5><p>为了过滤数组中的元素，我们很容易将v-if与v-for在同个元素同时使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 不好的做法</span><br><span class="line">&lt;div v-for=<span class="string">'product in products'</span> v-if=<span class="string">'product.price &lt; 500'</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>问题是在 Vue 优先使用v-for指令，而不是v-if指令。它循环遍历每个元素，然后检查v-if条件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.products.map(<span class="keyword">function</span> (product) &#123;</span><br><span class="line">  <span class="keyword">if</span> (product.price &lt; 500) &#123;</span><br><span class="line">    <span class="built_in">return</span> product</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>这意味着，即使我们只想渲染列表中的几个元素，也必须遍历整个数组。</p>
-<p>这对我们来当然没有任何好处。</p>
-<p>一个更聪明的解决方案是遍历一个计算属性，可以把上面的例子重构成下面这样的：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=<span class="string">'product in cheapProducts'</span>&gt;</span><br><span class="line"> </span><br><span class="line">computed: &#123;</span><br><span class="line">  cheapProducts: () =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> this.products.filter(<span class="keyword">function</span> (product) &#123;</span><br><span class="line">      <span class="built_in">return</span> product.price &lt; 100</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="这么做有几个好处："><a href="#这么做有几个好处：" class="headerlink" title="这么做有几个好处："></a>这么做有几个好处：</h4><ul>
-<li><p>渲染效率更高，因为我们不会遍历所有元素</p>
-</li>
-<li><p>仅当依赖项更改时，才会重使用过滤后的列表</p>
-</li>
-<li><p>这写法有助于将组件逻辑从模板中分离出来，使组件更具可读性</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1928,7 +1936,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

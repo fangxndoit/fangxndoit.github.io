@@ -286,6 +286,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/深拷贝/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/06/29/深拷贝/" class="post-title-link" itemprop="url">深拷贝</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-06-29 11:23:23" itemprop="dateCreated datePublished" datetime="2020-06-29T11:23:23+08:00">2020-06-29</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/技巧/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -766,12 +904,24 @@
                 
               
 
-              <time title="Created: 2020-05-28 17:03:07 / Modified: 17:35:32" itemprop="dateCreated datePublished" datetime="2020-05-28T17:03:07+08:00">2020-05-28</time>
+              <time title="Created: 2020-05-28 17:03:07" itemprop="dateCreated datePublished" datetime="2020-05-28T17:03:07+08:00">2020-05-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-06-29 11:28:16" itemprop="dateModified" datetime="2020-06-29T11:28:16+08:00">2020-06-29</time>
               
             
           </span>
@@ -807,7 +957,7 @@
       
         
           
-            <h4 id="对象深拷贝"><a href="#对象深拷贝" class="headerlink" title="对象深拷贝"></a>对象深拷贝</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式一</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;</span><br><span class="line"><span class="keyword">let</span> clone = &#123; ...obj &#125;;</span><br><span class="line">clone.b = <span class="number">4</span>;</span><br><span class="line"><span class="comment">// obj = &#123; a: 1, b: 2&#125;, clone = &#123; a: 1, b: 4 &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式二</span></span><br><span class="line"><span class="keyword">let</span> otherClone = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</span><br><span class="line">otherClone.b = <span class="number">6</span>;</span><br><span class="line">clone.b = <span class="number">4</span>;</span><br><span class="line"><span class="comment">// obj = &#123; a: 1, b: 2&#125;, otherClone = &#123; a: 1, b: 6 &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//方式三</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">let</span> clone = <span class="built_in">JSON</span>.parseJSON.stringify(obj));</span><br><span class="line">clone.b.c = <span class="number">4</span>;</span><br><span class="line"><span class="comment">// obj = &#123; a: 1, b: &#123; c: 2 &#125;&#125;, clone = &#123; a: 1, b: &#123; c: 4 &#125; &#125;</span></span><br></pre></td></tr></table></figure>
+            <h4 id="对象深拷贝"><a href="#对象深拷贝" class="headerlink" title="对象深拷贝"></a>对象深拷贝</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式一</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;</span><br><span class="line"><span class="keyword">let</span> clone = &#123; ...obj &#125;;</span><br><span class="line">clone.b = <span class="number">4</span>;</span><br><span class="line"><span class="comment">// obj = &#123; a: 1, b: 2&#125;, clone = &#123; a: 1, b: 4 &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式二</span></span><br><span class="line"><span class="keyword">let</span> otherClone = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</span><br><span class="line">otherClone.b = <span class="number">6</span>;</span><br><span class="line">clone.b = <span class="number">4</span>;</span><br><span class="line"><span class="comment">// obj = &#123; a: 1, b: 2&#125;, otherClone = &#123; a: 1, b: 6 &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//方式三</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">let</span> clone = <span class="built_in">JSON</span>.parseJSON.stringify(obj));</span><br><span class="line">clone.b.c = <span class="number">4</span>;</span><br><span class="line"><span class="comment">// obj = &#123; a: 1, b: &#123; c: 2 &#125;&#125;, clone = &#123; a: 1, b: &#123; c: 4 &#125; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//lodash的_.cloneDeep</span></span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: &#123; <span class="attr">f</span>: &#123; <span class="attr">g</span>: <span class="number">1</span> &#125; &#125;,</span><br><span class="line">  c: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = _.clone(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1.b.f === obj2.b.f);<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <h4 id="深冻结"><a href="#深冻结" class="headerlink" title="深冻结"></a>深冻结</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//深冻结</span></span><br><span class="line"><span class="keyword">const</span> myObj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="string">'hello'</span>,</span><br><span class="line">  c: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">  d: &#123; <span class="attr">e</span>: <span class="number">1</span>, <span class="attr">f</span>: <span class="number">2</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> deepFreeze = <span class="function"><span class="params">obj</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">Object</span>.keys(obj).forEach(<span class="function"><span class="params">prop</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj[prop] === <span class="string">'object'</span> &amp;&amp; !<span class="built_in">Object</span>.isFrozen(obj[prop])) deepFreeze(v[prop]);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">&#125;;</span><br><span class="line">deepFreeze(myObj);</span><br><span class="line"></span><br><span class="line">myObj.a = <span class="number">10</span>;</span><br><span class="line">myObj.b = <span class="string">'hi'</span>;</span><br><span class="line">myObj.c[<span class="number">1</span>] = <span class="number">4</span>;</span><br><span class="line">myObj.d.e = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">myObj = &#123;</span></span><br><span class="line"><span class="comment">  a: 1,</span></span><br><span class="line"><span class="comment">  b: 'hello',</span></span><br><span class="line"><span class="comment">  c: [0, 1, 2],</span></span><br><span class="line"><span class="comment">  d: &#123; e: 1, f: 2 &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
           
@@ -1624,171 +1774,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/遍历/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="哧溜"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my blog!"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/12/遍历/" class="post-title-link" itemprop="url">遍历</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-05-12 23:17:57" itemprop="dateCreated datePublished" datetime="2020-05-12T23:17:57+08:00">2020-05-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-05-19 14:17:20" itemprop="dateModified" datetime="2020-05-19T14:17:20+08:00">2020-05-19</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [&#123;</span><br><span class="line">  name: <span class="string">'zhang'</span>, <span class="attr">age</span>: <span class="number">20</span></span><br><span class="line">&#125;,&#123;</span><br><span class="line">  name: <span class="string">'li'</span>, <span class="attr">age</span>: <span class="number">19</span></span><br><span class="line">&#125;]</span><br><span class="line">arr1.forEach(<span class="function"><span class="params">item</span>=&gt;</span> item.age = item.age+<span class="number">10</span>)</span><br><span class="line"><span class="comment">// [&#123;naem:'zhang',age:20&#125;,&#123;name:'li',age:29&#125;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr2.forEach(<span class="function"><span class="params">item</span>=&gt;</span>item = item*<span class="number">2</span>)</span><br><span class="line"><span class="comment">//arr2 = [1,2,3]</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].forEach(<span class="function"><span class="params">item</span>=&gt;</span><span class="built_in">console</span>.log(item))</span><br><span class="line">	.filter(<span class="function"><span class="params">item</span>=&gt;</span> item&gt;<span class="number">2</span>)</span><br><span class="line"><span class="comment">//Uncaught TypeError: Cannot read property 'filter' of undefined</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>当数组中的元素是值类型，forEach不会改变数组；当数组是引用类型，则会改变数组</li>
-<li>不支持链式操作</li>
-</ul>
-<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1.map(<span class="function"><span class="params">item</span>=&gt;</span>item*<span class="number">2</span>)</span><br><span class="line"><span class="comment">// arr1=[1,2,3] arr2=[2,4,6]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="params">item</span> =&gt;</span> &#123; <span class="keyword">if</span>(item &gt; <span class="number">3</span>) <span class="keyword">return</span> item &#125;)</span><br><span class="line"><span class="comment">// =&gt; [undefined, undefined, undefined, 4, 5]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>map会创建新的数组。</li>
-<li>map 函数是对每个元素都执行相应的回调，所以必须使用return，不建议用于处理过滤</li>
-</ul>
-<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].filter(<span class="function"><span class="params">item</span> =&gt;</span> item&gt;<span class="number">3</span>)</span><br><span class="line"><span class="comment">// arr1=[4,5]</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1835,7 +1820,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
