@@ -96,22 +96,18 @@
 
 
 
-  <meta name="description" content="splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组 使用JavaScript Array的splice()方法删除元素123456let scores = [1,2,3,4,5,6];let deletedScores = scores.splice(0, 3);console.log(scores); //  [4, 5]">
+  <meta name="description" content="闭包闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包 1234567function A()&amp;#123;  let a = 1;  function B()&amp;#123;    console.log(a);  &amp;#125;  return B&amp;#125; 经典面试题，循环中使用闭包解决了var定义函数问题 12345for(var i=1; i&amp;lt;=5">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="splice">
-<meta property="og:url" content="http://yoursite.com/2020/05/20/splice/index.html">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://yoursite.com/2020/07/02/闭包/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组 使用JavaScript Array的splice()方法删除元素123456let scores = [1,2,3,4,5,6];let deletedScores = scores.splice(0, 3);console.log(scores); //  [4, 5]">
+<meta property="og:description" content="闭包闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包 1234567function A()&amp;#123;  let a = 1;  function B()&amp;#123;    console.log(a);  &amp;#125;  return B&amp;#125; 经典面试题，循环中使用闭包解决了var定义函数问题 12345for(var i=1; i&amp;lt;=5">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Delete-Example.png">
-<meta property="og:image" content="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Insert-Example.png">
-<meta property="og:image" content="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Replace-Example.png">
-<meta property="og:updated_time" content="2020-05-20T09:27:53.284Z">
+<meta property="og:updated_time" content="2020-07-02T02:56:37.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="splice">
-<meta name="twitter:description" content="splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组 使用JavaScript Array的splice()方法删除元素123456let scores = [1,2,3,4,5,6];let deletedScores = scores.splice(0, 3);console.log(scores); //  [4, 5]">
-<meta name="twitter:image" content="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Delete-Example.png">
+<meta name="twitter:title" content="闭包">
+<meta name="twitter:description" content="闭包闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包 1234567function A()&amp;#123;  let a = 1;  function B()&amp;#123;    console.log(a);  &amp;#125;  return B&amp;#125; 经典面试题，循环中使用闭包解决了var定义函数问题 12345for(var i=1; i&amp;lt;=5">
 
 
 
@@ -119,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/05/20/splice/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/02/闭包/"/>
 
 
 
@@ -129,7 +125,7 @@
   };
 </script>
 
-  <title>splice | my blog!</title>
+  <title>闭包 | my blog!</title>
   
 
 
@@ -294,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/20/splice/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/闭包/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="哧溜"/>
@@ -311,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">splice
+          <h1 class="post-title" itemprop="name headline">闭包
 
               
             
@@ -337,7 +333,7 @@
                 
               
 
-              <time title="Created: 2020-05-20 17:13:05 / Modified: 17:27:53" itemprop="dateCreated datePublished" datetime="2020-05-20T17:13:05+08:00">2020-05-20</time>
+              <time title="Created: 2020-07-02 10:35:28 / Modified: 10:56:37" itemprop="dateCreated datePublished" datetime="2020-07-02T10:35:28+08:00">2020-07-02</time>
             
 
             
@@ -376,19 +372,19 @@
       
 
       
-        <p><strong><code>splice()</code></strong> 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组</p>
-<h2 id="使用JavaScript-Array的splice-方法删除元素"><a href="#使用JavaScript-Array的splice-方法删除元素" class="headerlink" title="使用JavaScript Array的splice()方法删除元素"></a>使用JavaScript Array的<code>splice()</code>方法删除元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> scores = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">let</span> deletedScores = scores.splice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(scores); </span><br><span class="line"><span class="comment">//  [4, 5]</span></span><br><span class="line"><span class="built_in">console</span>.log(deletedScores); </span><br><span class="line"><span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Delete-Example.png" alt="图解"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.splice(position,<span class="number">0</span>,new_element_1,new_element_2,...);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>该<code>position</code>参数指定要在其中插入新元素的数组中的起始位置。</li>
-<li>第二个参数为零（0），指示该<code>splice()</code>方法不要删除任何元素。</li>
-<li>第三个自变量，第四个自变量等是插入到数组中的新元素</li>
-</ul>
-<h2 id="使用JavaScript-Array的splice-方法插入元素"><a href="#使用JavaScript-Array的splice-方法插入元素" class="headerlink" title="使用JavaScript Array的splice()方法插入元素"></a>使用JavaScript Array的<code>splice()</code>方法插入元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</span><br><span class="line">colors.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'purple'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(colors); </span><br><span class="line"><span class="comment">// ["red", "green", "purple", "blue"]</span></span><br><span class="line"></span><br><span class="line">colors.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">'yellow'</span>, <span class="string">'pink'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(colors); </span><br><span class="line"><span class="comment">// ["red", "yellow", "pink", "green", "purple", "blue"]</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Insert-Example.png" alt="图解"></p>
-<h2 id="使用JavaScript-Array的splice-方法替换元素"><a href="#使用JavaScript-Array的splice-方法替换元素" class="headerlink" title="使用JavaScript Array的splice()方法替换元素"></a>使用JavaScript Array的<code>splice()</code>方法替换元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> languages = [<span class="string">'C'</span>, <span class="string">'C++'</span>, <span class="string">'Java'</span>, <span class="string">'JavaScript'</span>];</span><br><span class="line">languages.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'Python'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(languages); </span><br><span class="line"><span class="comment">// ["C", "Python", "Java", "JavaScript"]</span></span><br><span class="line"></span><br><span class="line">languages.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">'C#'</span>,<span class="string">'Swift'</span>,<span class="string">'Go'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(languages); </span><br><span class="line"><span class="comment">// ["C", "Python", "C#", "Swift", "Go", "JavaScript"]</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.javascripttutorial.net/wp-content/uploads/2016/08/JavaScript-Array-Splice-Replace-Example.png" alt="图解"></p>
+        <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> B</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经典面试题，循环中使用闭包解决了<code>var</code>定义函数问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;, i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先因为<code>setTimeout</code>是个异步函数，所有会把循环全部执行完毕，这时候<code>i</code>就是6了，所以会输出一堆6</p>
+<p>解决办法有两种，第一种使用闭包</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(j)</span><br><span class="line">    &#125;,j*<span class="number">1000</span>)</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种就是使用<code>setTimeout</code>的第三个参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(j)</span><br><span class="line">  &#125;,i*<span class="number">1000</span>,i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三种就是使用<code>let</code>定义<code>i</code>了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于<code>let</code>来说，他会创建一个块级作用域，相当于</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="comment">//形成块级作用域</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> ii = i</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(ii)</span><br><span class="line">    &#125;,i*<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  i++</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> ii = i</span><br><span class="line">	&#125;</span><br><span class="line">  i++</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> ii = i</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -425,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/19/some/" rel="next" title="some">
-                <i class="fa fa-chevron-left"></i> some
+              <a href="/2020/07/01/操作符/" rel="next" title="操作符">
+                <i class="fa fa-chevron-left"></i> 操作符
               </a>
             
           </div>
@@ -434,10 +430,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/21/base64图片转file文件/" rel="prev" title="base64图片转file文件">
-                base64图片转file文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -571,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用JavaScript-Array的splice-方法删除元素"><span class="nav-number">1.</span> <span class="nav-text">使用JavaScript Array的splice()方法删除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用JavaScript-Array的splice-方法插入元素"><span class="nav-number">2.</span> <span class="nav-text">使用JavaScript Array的splice()方法插入元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用JavaScript-Array的splice-方法替换元素"><span class="nav-number">3.</span> <span class="nav-text">使用JavaScript Array的splice()方法替换元素</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a></li></ol></div>
             
 
           </div>
