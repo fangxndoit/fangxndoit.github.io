@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Every 和 Some1234567891011121314//Everyconst random_numbers = [13, 2, 37, 18, 5];const more_random_numbers = [0, -1, 30, 22];    const isPositive = (number) =&amp;gt; &amp;#123;	return number &amp;gt; 0;&amp;#125;;ran">
+  <meta name="description" content="设计一个LazyMan类，实现以下功能123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(10).eat(&apos;lunch&apos;);// Hi I am Tony// 等待了10秒...// I am eating lunchLazyMan(&apos;Tony&apos;).eat(&apos;lunch&apos;).sl">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="some&#x2F;every">
-<meta property="og:url" content="http://yoursite.com/2020/06/03/some-every/index.html">
+<meta property="og:title" content="设计一个Class">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/设计一个Class/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="Every 和 Some1234567891011121314//Everyconst random_numbers = [13, 2, 37, 18, 5];const more_random_numbers = [0, -1, 30, 22];    const isPositive = (number) =&amp;gt; &amp;#123;	return number &amp;gt; 0;&amp;#125;;ran">
+<meta property="og:description" content="设计一个LazyMan类，实现以下功能123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(10).eat(&apos;lunch&apos;);// Hi I am Tony// 等待了10秒...// I am eating lunchLazyMan(&apos;Tony&apos;).eat(&apos;lunch&apos;).sl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-03T03:36:29.898Z">
+<meta property="og:updated_time" content="2020-07-23T15:56:48.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="some&#x2F;every">
-<meta name="twitter:description" content="Every 和 Some1234567891011121314//Everyconst random_numbers = [13, 2, 37, 18, 5];const more_random_numbers = [0, -1, 30, 22];    const isPositive = (number) =&amp;gt; &amp;#123;	return number &amp;gt; 0;&amp;#125;;ran">
+<meta name="twitter:title" content="设计一个Class">
+<meta name="twitter:description" content="设计一个LazyMan类，实现以下功能123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(10).eat(&apos;lunch&apos;);// Hi I am Tony// 等待了10秒...// I am eating lunchLazyMan(&apos;Tony&apos;).eat(&apos;lunch&apos;).sl">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/06/03/some-every/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/23/设计一个Class/"/>
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>some/every | my blog!</title>
+  <title>设计一个Class | my blog!</title>
   
 
 
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/some-every/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/设计一个Class/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="哧溜"/>
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">some/every
+          <h1 class="post-title" itemprop="name headline">设计一个Class
 
               
             
@@ -333,7 +333,7 @@
                 
               
 
-              <time title="Created: 2020-06-03 11:32:07 / Modified: 11:36:29" itemprop="dateCreated datePublished" datetime="2020-06-03T11:32:07+08:00">2020-06-03</time>
+              <time title="Created: 2020-07-23 23:55:32 / Modified: 23:56:48" itemprop="dateCreated datePublished" datetime="2020-07-23T23:55:32+08:00">2020-07-23</time>
             
 
             
@@ -372,10 +372,7 @@
       
 
       
-        <h2 id="Every-和-Some"><a href="#Every-和-Some" class="headerlink" title="Every 和 Some"></a>Every 和 Some</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Every</span></span><br><span class="line"><span class="keyword">const</span> random_numbers = [<span class="number">13</span>, <span class="number">2</span>, <span class="number">37</span>, <span class="number">18</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> more_random_numbers = [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">30</span>, <span class="number">22</span>];</span><br><span class="line">    </span><br><span class="line"><span class="keyword">const</span> isPositive = <span class="function">(<span class="params">number</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> number &gt; <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">random_numbers.every(isPositive); <span class="comment">// returns true</span></span><br><span class="line">more_random_numbers.every(isPositive); <span class="comment">// returns false</span></span><br><span class="line"></span><br><span class="line">random_numbers.every(<span class="function">(<span class="params">number</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> number &gt; <span class="number">0</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>every<code>函数返回一个布尔值。如果数组中的所有元素都通过了测试，将会返回</code>true<code>。哪怕数组中只有一个元素没有通过测试，返回的结果也是</code>false</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//some</span></span><br><span class="line"><span class="keyword">const</span> random_numbers = [ <span class="number">13</span>, <span class="number">2</span>, <span class="number">37</span>, <span class="number">18</span>, <span class="number">5</span> ]</span><br><span class="line"><span class="keyword">const</span> more_random_numbers = [ <span class="number">0</span>, <span class="number">-1</span>, <span class="number">30</span>, <span class="number">22</span> ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isPositive = <span class="function">(<span class="params">number</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> number &gt; <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">random_numbers.some(isPositive); <span class="comment">// returns true</span></span><br><span class="line">more_random_numbers.some(isPositive); <span class="comment">// returns true</span></span><br></pre></td></tr></table></figure>
-<p><code>some</code> 函数测试是否至少有一个数组中的元素通过了测试。</p>
+        <h4 id="设计一个LazyMan类，实现以下功能"><a href="#设计一个LazyMan类，实现以下功能" class="headerlink" title="设计一个LazyMan类，实现以下功能"></a>设计一个LazyMan类，实现以下功能</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LazyMan(<span class="string">'Tony'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'Tony'</span>).sleep(<span class="number">10</span>).eat(<span class="string">'lunch'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"><span class="comment">// 等待了10秒...</span></span><br><span class="line"><span class="comment">// I am eating lunch</span></span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'Tony'</span>).eat(<span class="string">'lunch'</span>).sleep(<span class="number">10</span>).eat(<span class="string">'dinner'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"><span class="comment">// I am eating lunch</span></span><br><span class="line"><span class="comment">// 等待了10秒...</span></span><br><span class="line"><span class="comment">// I am eating diner</span></span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'Tony'</span>).eat(<span class="string">'lunch'</span>).eat(<span class="string">'dinner'</span>).sleepFirst(<span class="number">5</span>).sleep(<span class="number">10</span>).eat(<span class="string">'junk food'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"><span class="comment">// 等待了5秒...</span></span><br><span class="line"><span class="comment">// I am eating lunch</span></span><br><span class="line"><span class="comment">// I am eating dinner</span></span><br><span class="line"><span class="comment">// 等待了10秒...</span></span><br><span class="line"><span class="comment">// I am eating junk food</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -412,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/29/‘检查是否为空’/" rel="next" title="‘检查是否为空’">
-                <i class="fa fa-chevron-left"></i> ‘检查是否为空’
+              <a href="/2020/07/22/sleep/" rel="next" title="sleep">
+                <i class="fa fa-chevron-left"></i> sleep
               </a>
             
           </div>
@@ -421,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/03/技巧/" rel="prev" title="技巧">
-                技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Every-和-Some"><span class="nav-number">1.</span> <span class="nav-text">Every 和 Some</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#设计一个LazyMan类，实现以下功能"><span class="nav-number">1.</span> <span class="nav-text">设计一个LazyMan类，实现以下功能</span></a></li></ol></div>
             
 
           </div>
