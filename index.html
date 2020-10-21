@@ -672,12 +672,24 @@
                 
               
 
-              <time title="Created: 2020-10-19 10:16:11 / Modified: 11:55:33" itemprop="dateCreated datePublished" datetime="2020-10-19T10:16:11+08:00">2020-10-19</time>
+              <time title="Created: 2020-10-19 10:16:11" itemprop="dateCreated datePublished" datetime="2020-10-19T10:16:11+08:00">2020-10-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-10-21 21:53:13" itemprop="dateModified" datetime="2020-10-21T21:53:13+08:00">2020-10-21</time>
               
             
           </span>
@@ -723,6 +735,7 @@
 <p>#####使用<strong><code>instanceof</code></strong>操作符检测某个对象的具体类型</p>
 <p><strong><code>instanceof</code></strong>运算符用于检测构造函数的<code>prototype</code>属性是否出现在某个实例对象的原型链</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟代码</span></span><br><span class="line"><span class="keyword">instanceof</span> (A,B) = &#123;</span><br><span class="line">  <span class="keyword">var</span> L = A.__proto__;</span><br><span class="line">  <span class="keyword">var</span> R = B.prototype;</span><br><span class="line">  <span class="keyword">if</span>(L === R)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instanceof</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获得类型的原型</span></span><br><span class="line">    <span class="keyword">let</span> prototype = right.prototype</span><br><span class="line">    <span class="comment">// 获得对象的原型</span></span><br><span class="line">    left = left.__proto__</span><br><span class="line">    <span class="comment">// 判断对象的类型是否等于类型的原型</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    	<span class="keyword">if</span> (left === <span class="literal">null</span>)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    	<span class="keyword">if</span> (prototype === left)</span><br><span class="line">    		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    	left = left.__proto__</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>; <span class="comment">//true</span></span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">//true</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Date</span>;<span class="comment">//true</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Object</span>;<span class="comment">//true</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">new</span> Person() <span class="keyword">instanceof</span> Person;<span class="comment">//true</span></span><br><span class="line"><span class="keyword">new</span> Person() <span class="keyword">instanceof</span> <span class="built_in">Object</span>;<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <p><code>[].__proto__</code> –&gt; <code>Array.prototype</code> –&gt; <code>Object.prototype</code> -&gt; <code>null</code></p>
 <p>#####使用<code>toString()</code>检测对象类型</p>
