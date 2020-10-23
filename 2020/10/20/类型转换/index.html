@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="my blog!">
 <meta property="og:description" content="转Boolean在条件判断时，除了undefined，null，false，NaN，&amp;#39;&amp;#39;，0，-0，其他所有值都转换为true，包括所有对象 对象转基本类型对象在转基本类型时，首先会调用valueOf然后调用toString。并且这两个方法可以重写 四则运算只有当加法运算时，其中一方是字符串类型，就会把另一个也转为字符串类型。其他运算只要其中一方是数字，那么另一方就转为数字。并且加">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-10-20T04:42:01.758Z">
+<meta property="og:updated_time" content="2020-10-23T07:03:28.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="类型转换">
 <meta name="twitter:description" content="转Boolean在条件判断时，除了undefined，null，false，NaN，&amp;#39;&amp;#39;，0，-0，其他所有值都转换为true，包括所有对象 对象转基本类型对象在转基本类型时，首先会调用valueOf然后调用toString。并且这两个方法可以重写 四则运算只有当加法运算时，其中一方是字符串类型，就会把另一个也转为字符串类型。其他运算只要其中一方是数字，那么另一方就转为数字。并且加">
@@ -332,12 +332,24 @@
                 
               
 
-              <time title="Created: 2020-10-20 11:40:30 / Modified: 12:42:01" itemprop="dateCreated datePublished" datetime="2020-10-20T11:40:30+08:00">2020-10-20</time>
+              <time title="Created: 2020-10-20 11:40:30" itemprop="dateCreated datePublished" datetime="2020-10-20T11:40:30+08:00">2020-10-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-10-23 15:03:28" itemprop="dateModified" datetime="2020-10-23T15:03:28+08:00">2020-10-23</time>
               
             
           </span>
@@ -404,7 +416,7 @@
 <li>若<code>Type(x)</code>为<code>Boolean</code>，返回比较<code>ToNumber(x) == y</code>的结果。</li>
 <li>若<code>Type(y)</code>为<code>Boolean</code>，返回比较<code>x == ToNumber(y)</code>的结果。</li>
 <li>若<code>Type(x)</code>为<code>String</code>或<code>Number</code>，且<code>Type(y)</code>为<code>Object</code>，返回比较<code>x == ToPrimitive(y)</code>的结果。</li>
-<li>若<code>Type(x)</code>为<code>Object</code>且<code>Type(y)</code>为<code>String</code>或<code>Number</code>，返回比较<code>ToPrimitive(x) == y</code>的结果</li>
+<li>若<code>Type(x)</code>为<code>Object</code>，且<code>Type(y)</code>为<code>String</code>或<code>Number</code>，返回比较<code>ToPrimitive(x) == y</code>的结果</li>
 </ol>
 <p><code>toPrimitive</code>就是对象转基本类型</p>
 <p>例题：<code>[] == ![] // -&gt; true</code></p>
@@ -521,7 +533,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
