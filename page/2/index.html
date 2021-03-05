@@ -286,6 +286,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/防抖和节流/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/07/10/防抖和节流/" class="post-title-link" itemprop="url">防抖和节流</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-07-10 14:54:10 / Modified: 17:48:28" itemprop="dateCreated datePublished" datetime="2020-07-10T14:54:10+08:00">2020-07-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>事件高频触发事件后n秒内函数只会执行一次，如果n秒内高频事件再次触发，则重新计算时间</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>每次触发事件时都取消之前的延时调用方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout = <span class="literal">null</span>; <span class="comment">//创建一个标记用来存放定时器的返回值</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    clearTimeout(timeout); <span class="comment">// 每当用户输入的时候把前一个 setTimeout clear 掉</span></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="comment">// 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数</span></span><br><span class="line"> 		fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'防抖成功'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> inp = <span class="built_in">document</span>.getElementById(<span class="string">'inp'</span>);</span><br><span class="line">inp.addEventListener(<span class="string">'input'</span>, debounce(sayHi)); <span class="comment">// 防抖</span></span><br></pre></td></tr></table></figure>
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率</p>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>每次触发事件时都判断当前是否有等待执行的延时函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> canRun = <span class="literal">true</span>; <span class="comment">// 通过闭包保存一个标记</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  	<span class="keyword">if</span> (!canRun) <span class="keyword">return</span>; <span class="comment">// 在函数开头判断标记是否为true，不为true则return</span></span><br><span class="line">    	canRun = <span class="literal">false</span>; <span class="comment">// 立即设置为false</span></span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="comment">// 将外部传入的函数的执行放在setTimeout中</span></span><br><span class="line">      fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>); <span class="comment">// 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。当定时器没有执行的时候标记永远是false，在开头被return掉</span></span><br><span class="line">      canRun = <span class="literal">true</span>;</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(e.target.innerWidth, e.target.innerHeight);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, throttle(sayHi));</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/压缩图片/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1628,150 +1776,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/21/base64图片转file文件/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="哧溜"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my blog!"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/05/21/base64图片转file文件/" class="post-title-link" itemprop="url">base64图片转file文件</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-05-21 11:48:06 / Modified: 12:45:20" itemprop="dateCreated datePublished" datetime="2020-05-21T11:48:06+08:00">2020-05-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="通过new-File-将base64转换成file文件-存在兼容性问题"><a href="#通过new-File-将base64转换成file文件-存在兼容性问题" class="headerlink" title="通过new File()将base64转换成file文件(存在兼容性问题)"></a>通过new File()将base64转换成file文件(存在兼容性问题)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将base64转换为文件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dataURLtoFile</span>(<span class="params">dataurl, filename</span>) </span>&#123; </span><br><span class="line">		<span class="keyword">var</span> arr = dataurl.split(<span class="string">','</span>),</span><br><span class="line">		mime = arr[<span class="number">0</span>].match(<span class="regexp">/:(.*?);/</span>)[<span class="number">1</span>],</span><br><span class="line">	  bstr = atob(arr[<span class="number">1</span>]),</span><br><span class="line">	  n = bstr.length,</span><br><span class="line">	  u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(n);</span><br><span class="line">		<span class="keyword">while</span> (n--) &#123;</span><br><span class="line">			u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> File([u8arr], filename, &#123; <span class="attr">type</span>: mime &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="keyword">var</span> file = dataURLtoFile(base64Data, imgName);</span><br></pre></td></tr></table></figure>
-<h4 id="先将base64转换成blob，再将blob转换成file文件"><a href="#先将base64转换成blob，再将blob转换成file文件" class="headerlink" title="先将base64转换成blob，再将blob转换成file文件"></a>先将base64转换成blob，再将blob转换成file文件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将base64转换为blob</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dataURLtoBlob</span>(<span class="params">dataurl</span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> arr = dataurl.split(<span class="string">','</span>),</span><br><span class="line">			mime = arr[<span class="number">0</span>].match(<span class="regexp">/:(.*?);/</span>)[<span class="number">1</span>],</span><br><span class="line">  		bstr = atob(arr[<span class="number">1</span>]),</span><br><span class="line">      n = bstr.length,</span><br><span class="line">      u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(n);</span><br><span class="line">  <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">      u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">  &#125;</span><br><span class="line">     	<span class="keyword">return</span> <span class="keyword">new</span> Blob([u8arr], &#123; <span class="attr">type</span>: mime &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将blob转换为file</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">blobToFile</span>(<span class="params">theBlob, fileName</span>)</span>&#123;</span><br><span class="line">	theBlob.lastModifiedDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">  theBlob.name = fileName;</span><br><span class="line">  <span class="keyword">return</span> theBlob;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line"><span class="keyword">var</span> blob = dataURLtoBlob(base64Data);</span><br><span class="line"><span class="keyword">var</span> file = blobToFile(blob, imgName);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1822,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1889,7 +1893,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
