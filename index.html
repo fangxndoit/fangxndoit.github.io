@@ -348,7 +348,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-03-06 01:20:51" itemprop="dateModified" datetime="2021-03-06T01:20:51+08:00">2021-03-06</time>
+                <time title="Modified: 2021-03-07 00:21:20" itemprop="dateModified" datetime="2021-03-07T00:21:20+08:00">2021-03-07</time>
               
             
           </span>
@@ -457,6 +457,31 @@
 <li>提供<code>include</code>和<code>exclude</code>属性，两者都支持字符串或正则表达式，<code>include</code>表示只有名称匹配的组件会被缓存，<code>exclude</code>表示任何名称匹配的组件都不会被缓存，其中<code>exclude</code>的优先级比<code>include</code>高；</li>
 <li>对应两个钩子函数<code>activated</code>和<code>deactivated</code>，当组件被激活时，触发钩子函数<code>activated</code>，当组件被移除时，触发钩子函数<code>deactivated</code>。</li>
 </ul>
+<h4 id="10-v-model的原理"><a href="#10-v-model的原理" class="headerlink" title="10.v-model的原理"></a><strong>10.<code>v-model</code>的原理</strong></h4><p>在<code>vue</code>项目中主要使用<code>v-model</code>指令在表单<code>input</code>、<code>textarea</code>、<code>select</code>等元素上创建双向数据绑定，我们知道<code>v-model</code>本质上不过是语法糖，<code>v-model</code>在内部为不同的输入元素使用不同的属性并抛出不同的事件：</p>
+<ul>
+<li><code>text</code>和<code>textarea</code>元素使用<code>value</code>属性和<code>input</code>事件；</li>
+<li><code>checkbox</code>和<code>radio</code>使用<code>checked</code>属性和<code>change</code>事件；</li>
+<li><code>select</code>字段将<code>value</code>作为<code>prop</code>并将<code>change</code>作为事件。</li>
+</ul>
+<p>以<code>input</code>表单元素为例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; input v-model=<span class="string">"something"</span> /&gt;</span><br><span class="line"><span class="comment">// 相当于</span></span><br><span class="line">&lt;input v-bind:value=<span class="string">"something"</span> v-on:input=<span class="string">"something = $event.target.value"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>如果在自定义组件中，<code>v-model</code>默认会利用名为<code>value</code>的<code>prop</code>和名为<code>input</code>的事件，如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">&lt;ModelChild v-model=<span class="string">"message"</span>&gt;&lt;/ModelChild&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件</span></span><br><span class="line">&lt;div&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">props:&#123;</span></span><br><span class="line"><span class="regexp">	value: String</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">  test1()&#123;</span></span><br><span class="line"><span class="regexp">    this.$emit('input','小红')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="11-Vue组件间通信有哪几种方式"><a href="#11-Vue组件间通信有哪几种方式" class="headerlink" title="11.Vue组件间通信有哪几种方式"></a><strong>11.<code>Vue</code>组件间通信有哪几种方式</strong></h4><p><code>Vue</code>组件间通信主要有：父子组件通信、隔代组件通信、兄弟组件通信</p>
+<ol>
+<li><p><code>prop / $emit</code>适用 <strong>父子组件通信</strong></p>
+</li>
+<li><p><code>ref</code>与 <code>$parent</code>/ <code>$children</code>适用 <strong>父子组件通信</strong></p>
+<p><code>ref</code>：如果在普通的<code>DOM</code>元素上使用，引用者向的就是<code>DOM</code>元素；如果用在子组件上，引用的就是指向组件实例</p>
+<p><code>$parent</code>/ <code>$children</code>：访问父 / 子实例</p>
+</li>
+<li><p><code>EventBus</code>（<code>$emit</code>/<code>$on</code>）适用于<strong>父子，隔代，兄弟组件通信</strong></p>
+<p>这种方法通过一个空的<code>Vue</code>实例作为中央事件总线（事件中心），用它来触发事件和监听事件，从二实现任何组件间的通信，包括父子、隔代、兄弟组件</p>
+</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
 
           
         
