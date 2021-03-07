@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="my blog!">
 <meta property="og:description" content="####1.说说你对SPA单页页面的理解，它的优缺点分别是什么？ SPA（single-page application）仅在Web页面初始化时加载相应的HTML、JavaScript和CSS。一旦页面加载完成，SPA不会因为用户操作而进行页面的重新加载和跳转；取而代之的是利用路由机制实现HTML内容的转换，UI与用户的交互，避免页面的重新加载。 优点 用户体验好、快，内容的改变不需要重新加载整个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-06T16:21:20.459Z">
+<meta property="og:updated_time" content="2021-03-07T07:04:26.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue 面试题（转载）">
 <meta name="twitter:description" content="####1.说说你对SPA单页页面的理解，它的优缺点分别是什么？ SPA（single-page application）仅在Web页面初始化时加载相应的HTML、JavaScript和CSS。一旦页面加载完成，SPA不会因为用户操作而进行页面的重新加载和跳转；取而代之的是利用路由机制实现HTML内容的转换，UI与用户的交互，避免页面的重新加载。 优点 用户体验好、快，内容的改变不需要重新加载整个">
@@ -349,7 +349,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-03-07 00:21:20" itemprop="dateModified" datetime="2021-03-07T00:21:20+08:00">2021-03-07</time>
+                <time title="Modified: 2021-03-07 15:04:26" itemprop="dateModified" datetime="2021-03-07T15:04:26+08:00">2021-03-07</time>
               
             
           </span>
@@ -477,9 +477,20 @@
 <li><p><code>EventBus</code>（<code>$emit</code>/<code>$on</code>）适用于<strong>父子，隔代，兄弟组件通信</strong></p>
 <p>这种方法通过一个空的<code>Vue</code>实例作为中央事件总线（事件中心），用它来触发事件和监听事件，从二实现任何组件间的通信，包括父子、隔代、兄弟组件</p>
 </li>
-<li></li>
-<li></li>
-<li></li>
+<li><p><code>$attrs</code>/<code>$listeners</code>适用于<strong>隔代组件通信</strong></p>
+<p><code>$attrs</code>: 包含了父作用域中不被<code>prop</code>所设别（且获取）的特性绑定（<code>class</code>和<code>style</code>除外）。当一个组件没有声明任何<code>prop</code>时，这里会包含所有父作用域的绑定（<code>class</code>和<code>style</code>除外），并且可以通过<code>v-bind=&quot;$attrs&quot;</code>传入内部组件。通常配合<code>inheritAttrs</code>选项一起使用。</p>
+<p><code>$listeners</code>：包含了父作用域中的（不含<code>.native</code>修饰器）<code>v-on</code>事件监听器。它可以通过<code>v-on=&quot;$listeners&quot;传入内部组件</code></p>
+</li>
+<li><p><code>provide</code>/<code>inject</code>适用于<strong>隔代组件通信</strong></p>
+<p>祖先组件中通过<code>provider</code>来提供变量，然后在子孙组件中通过<code>inject</code>来注入变量。<code>provide</code>/<code>inject API</code>主要解决了跨级组件间的通信问题，不过它的使用场景，主要是子组件获取上级组件的状态，跨级组件间建立了一种主动提供与依赖注入的关系</p>
+</li>
+<li><p><code>Vuex</code>适用于<strong>父子、隔代、兄弟组件通信</strong></p>
+<p><code>Vuex</code>是一个专门为<code>Vue.js</code>应用程序开发的状态管理模式。每一个<code>Vuex</code>应用的核心就是<code>store</code>（仓库）。<code>store</code>基本就是一个容器，它包含着应用中大部分的状态（<code>state</code>）</p>
+<ul>
+<li><code>Vuex</code>的状态存储是响应式的。当<code>Vue</code>组件从<code>store</code>中读取状态的时候，若<code>store</code>中的状态发生变化，那么相应的组件也会高效更新。</li>
+<li>改变<code>store</code>中的状态的唯一途径就是显示地提交（<code>commit</code>）<code>mutation</code>。这样使得我们可以方便地追踪每一个状态的变化。</li>
+</ul>
+</li>
 </ol>
 
       
