@@ -348,7 +348,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-03-07 15:04:26" itemprop="dateModified" datetime="2021-03-07T15:04:26+08:00">2021-03-07</time>
+                <time title="Modified: 2021-03-08 23:45:14" itemprop="dateModified" datetime="2021-03-08T23:45:14+08:00">2021-03-08</time>
               
             
           </span>
@@ -493,6 +493,28 @@
 </ul>
 </li>
 </ol>
+<h4 id="12-你用过Vuex吗？"><a href="#12-你用过Vuex吗？" class="headerlink" title="12.你用过Vuex吗？"></a><strong>12.你用过<code>Vuex</code>吗？</strong></h4><p><code>Vuex</code>是一个专门为<code>Vue.js</code>应用程序开发的状态管理模式。每一个<code>Vuex</code>应用的核心就是<code>store</code>（仓库）。<code>store</code>基本就是一个容器，它包含着应用中大部分的状态（<code>state</code>）</p>
+<ol>
+<li><code>Vuex</code>的状态存储是响应式的。当<code>Vue</code>组件从<code>store</code>中读取状态的时候，若<code>store</code>中的状态发生变化，那么相应的组件也会高效更新。</li>
+<li>改变<code>store</code>中的状态的唯一途径就是显示地提交（<code>commit</code>）<code>mutation</code>。这样使得我们可以方便地追踪每一个状态的变化。</li>
+</ol>
+<p>主要包含以下几个模块：</p>
+<ul>
+<li><code>State</code>：定义了应用状态的数据结构，可以在这里设置默认的初始状态。</li>
+<li><code>Getter</code>：允许组件从<code>Store</code>中获取数据，<code>mapGetters</code>辅助函数仅仅是将<code>store</code>中的<code>getter</code>映射到局部计算属性。</li>
+<li><code>Motation</code>：是唯一更改<code>store</code>中状态的方法，且必须是同步函数。</li>
+<li><code>Action</code>：用于提交<code>mutation</code>，而不是直接变更状态，可以包含任意异步操作。</li>
+<li><code>Module</code>：允许将单一的<code>Store</code>拆分为多个<code>store</code>且同时保存在单一的状态中。</li>
+</ul>
+<h4 id="13-Vue是如何实现数据双向绑定的？"><a href="#13-Vue是如何实现数据双向绑定的？" class="headerlink" title="13.Vue是如何实现数据双向绑定的？"></a><strong>13.<code>Vue</code>是如何实现数据双向绑定的？</strong></h4><p><code>Vue</code>主要通过以下<strong>4</strong>步骤来实现数据双向绑定的：</p>
+<ul>
+<li>实现一个监听器<code>Observer</code>：对数据对象进行遍历，包括子属性对象的属性，利用<code>Object.defineProperty()</code>对属性都加上<code>setter</code>和<code>getter</code>。这样的话，给这个对象的某个值赋值，就会触发<code>setter</code>，那么就能监听到了数据变化。</li>
+<li>实现一个解析器<code>Compile</code>：解析<code>Vue</code>模板指令，将模版中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，调用更新函数进行数据更新。</li>
+<li>实现一个订阅者<code>Watcher</code>：<code>Watcher</code>订阅者是<code>Observer</code>和<code>Compile</code>之间的通信桥梁，主要的任务是订阅<code>Observer</code>中的属性值变化的消息，当收到属性变化的消息时，触发解析器<code>Compile</code>中对应的更新函数。</li>
+<li>实现一个订阅器<code>Dep</code>：订阅器采用<strong>发布-订阅</strong>设计模式，用来收集订阅者<code>Watcher</code>，对监听器<code>Observer</code>和订阅者<code>Watcher</code>进行统一管理。</li>
+</ul>
+<h4 id="14-Vue框架怎么实现对象和数组的监听？"><a href="#14-Vue框架怎么实现对象和数组的监听？" class="headerlink" title="14.Vue框架怎么实现对象和数组的监听？"></a><strong>14.<code>Vue</code>框架怎么实现对象和数组的监听？</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Observe a list of Array items.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">observeArray (items: <span class="built_in">Array</span>&lt;any&gt;) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, l = items.length; i &lt; l; i++) &#123;</span><br><span class="line">  	observe(items[i])  <span class="comment">// observe 功能为监测数据的变化</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对属性进行递归遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">let</span> childOb = !shallow &amp;&amp; observe(val) <span class="comment">// observe 功能为监测数据的变化</span></span><br></pre></td></tr></table></figure>
+<p><code>Vue</code>框架通过遍历数组和递归遍历对象，从而达到利用<code>Object.difineProperty()</code>也能对对象和数组（部分方法的操作）进行监听。</p>
 
           
         
