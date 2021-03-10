@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="my blog!">
 <meta property="og:description" content="####1.说说你对SPA单页页面的理解，它的优缺点分别是什么？ SPA（single-page application）仅在Web页面初始化时加载相应的HTML、JavaScript和CSS。一旦页面加载完成，SPA不会因为用户操作而进行页面的重新加载和跳转；取而代之的是利用路由机制实现HTML内容的转换，UI与用户的交互，避免页面的重新加载。 优点 用户体验好、快，内容的改变不需要重新加载整个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-08T15:45:14.830Z">
+<meta property="og:updated_time" content="2021-03-08T17:48:40.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue 面试题（转载）">
 <meta name="twitter:description" content="####1.说说你对SPA单页页面的理解，它的优缺点分别是什么？ SPA（single-page application）仅在Web页面初始化时加载相应的HTML、JavaScript和CSS。一旦页面加载完成，SPA不会因为用户操作而进行页面的重新加载和跳转；取而代之的是利用路由机制实现HTML内容的转换，UI与用户的交互，避免页面的重新加载。 优点 用户体验好、快，内容的改变不需要重新加载整个">
@@ -349,7 +349,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-03-08 23:45:14" itemprop="dateModified" datetime="2021-03-08T23:45:14+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 01:48:40" itemprop="dateModified" datetime="2021-03-09T01:48:40+08:00">2021-03-09</time>
               
             
           </span>
@@ -465,7 +465,7 @@
 <p>以<code>input</code>表单元素为例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; input v-model=<span class="string">"something"</span> /&gt;</span><br><span class="line"><span class="comment">// 相当于</span></span><br><span class="line">&lt;input v-bind:value=<span class="string">"something"</span> v-on:input=<span class="string">"something = $event.target.value"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <p>如果在自定义组件中，<code>v-model</code>默认会利用名为<code>value</code>的<code>prop</code>和名为<code>input</code>的事件，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">&lt;ModelChild v-model=<span class="string">"message"</span>&gt;&lt;/ModelChild&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件</span></span><br><span class="line">&lt;div&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">props:&#123;</span></span><br><span class="line"><span class="regexp">	value: String</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">  test1()&#123;</span></span><br><span class="line"><span class="regexp">    this.$emit('input','小红')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">&lt;ModelChild v-model=<span class="string">"message"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">ModelChild</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件</span></span><br><span class="line">&lt;div&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">props:&#123;</span></span><br><span class="line"><span class="regexp">	value: String</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">  test1()&#123;</span></span><br><span class="line"><span class="regexp">    this.$emit('input','小红')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="11-Vue组件间通信有哪几种方式"><a href="#11-Vue组件间通信有哪几种方式" class="headerlink" title="11.Vue组件间通信有哪几种方式"></a><strong>11.<code>Vue</code>组件间通信有哪几种方式</strong></h4><p><code>Vue</code>组件间通信主要有：父子组件通信、隔代组件通信、兄弟组件通信</p>
 <ol>
 <li><p><code>prop / $emit</code>适用 <strong>父子组件通信</strong></p>
@@ -514,6 +514,23 @@
 </ul>
 <h4 id="14-Vue框架怎么实现对象和数组的监听？"><a href="#14-Vue框架怎么实现对象和数组的监听？" class="headerlink" title="14.Vue框架怎么实现对象和数组的监听？"></a><strong>14.<code>Vue</code>框架怎么实现对象和数组的监听？</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Observe a list of Array items.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">observeArray (items: <span class="built_in">Array</span>&lt;any&gt;) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, l = items.length; i &lt; l; i++) &#123;</span><br><span class="line">  	observe(items[i])  <span class="comment">// observe 功能为监测数据的变化</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对属性进行递归遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">let</span> childOb = !shallow &amp;&amp; observe(val) <span class="comment">// observe 功能为监测数据的变化</span></span><br></pre></td></tr></table></figure>
 <p><code>Vue</code>框架通过遍历数组和递归遍历对象，从而达到利用<code>Object.difineProperty()</code>也能对对象和数组（部分方法的操作）进行监听。</p>
+<h4 id="15-Proxy与Object-defineProperty优劣对比"><a href="#15-Proxy与Object-defineProperty优劣对比" class="headerlink" title="15.Proxy与Object.defineProperty优劣对比"></a><strong>15.<code>Proxy</code>与<code>Object.defineProperty</code>优劣对比</strong></h4><p><code>Proxy</code>的优势如下：</p>
+<ul>
+<li><code>Proxy</code>可以直接监听对象和非属性；</li>
+<li><code>Proxy</code>可以直接监听数组的变化；</li>
+<li><code>Proxy</code>有多达13种拦截方法啊，不限于<code>appley、</code>ownKeys<code>、</code>delectProperty<code>、</code>has<code>等等是</code>Object.defineProperty`不具备的；</li>
+<li><code>Proxy</code>返回的是一个新对象，我们可以只操作新对象而达到目的，而<code>Object.defineProperty</code>只能遍历对象属性直接修改；</li>
+<li><code>Proxy</code>作为新标准受到浏览器厂商重点持续的性能优化，也就是传说中的新标准的性能红利。</li>
+</ul>
+<p><code>Object.defineProperty</code>的优势如下：</p>
+<ul>
+<li>兼容性好，支持<code>IE9</code>，而<code>Proxy</code>存在浏览器兼容性问题，而且无法利用<code>polyfill</code>磨平。</li>
+</ul>
+<h4 id="15-虚拟DOM的实现原理"><a href="#15-虚拟DOM的实现原理" class="headerlink" title="15.虚拟DOM的实现原理?"></a><strong>15.虚拟<code>DOM</code>的实现原理?</strong></h4><ul>
+<li>用<code>javascript</code>对象模拟真实的<code>DOM</code>树，对真实的<code>DOM</code>进行抽象；</li>
+<li><code>diff</code>算法 – 比较两颗虚拟<code>DOM</code>树的差异；</li>
+<li><code>pach</code>算法 – 将两个虚拟<code>DOM</code>对象的差异应用到真正的<code>DOM</code>树</li>
+</ul>
 
       
     </div>
@@ -553,6 +570,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/03/11/js并集、交集、差集/" rel="prev" title="js并集、交集、差集">
+                js并集、交集、差集 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -621,7 +642,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -688,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点"><span class="nav-number">1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-怎么理解Vue的单向数据流"><span class="nav-number"></span> <span class="nav-text">2.怎么理解Vue的单向数据流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-直接给一个数组项赋值，Vue能检测到变化吗？"><span class="nav-number"></span> <span class="nav-text">4.直接给一个数组项赋值，Vue能检测到变化吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Vue的父组件和子组件生命周期钩子函数执行顺序"><span class="nav-number"></span> <span class="nav-text">5.Vue的父组件和子组件生命周期钩子函数执行顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-在哪个生命周期内调用异步请求"><span class="nav-number"></span> <span class="nav-text">6.在哪个生命周期内调用异步请求?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-在什么阶段才能访问操作DOM"><span class="nav-number"></span> <span class="nav-text">7.在什么阶段才能访问操作DOM?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-父组件可以监听子组件的生命周期吗"><span class="nav-number"></span> <span class="nav-text">8.父组件可以监听子组件的生命周期吗?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-谈谈你对keep-alive的了解"><span class="nav-number"></span> <span class="nav-text">9.谈谈你对keep-alive的了解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-v-model的原理"><span class="nav-number"></span> <span class="nav-text">10.v-model的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-Vue组件间通信有哪几种方式"><span class="nav-number"></span> <span class="nav-text">11.Vue组件间通信有哪几种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-你用过Vuex吗？"><span class="nav-number"></span> <span class="nav-text">12.你用过Vuex吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-Vue是如何实现数据双向绑定的？"><span class="nav-number"></span> <span class="nav-text">13.Vue是如何实现数据双向绑定的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-Vue框架怎么实现对象和数组的监听？"><span class="nav-number"></span> <span class="nav-text">14.Vue框架怎么实现对象和数组的监听？</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#优点"><span class="nav-number">1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点"><span class="nav-number">2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-怎么理解Vue的单向数据流"><span class="nav-number"></span> <span class="nav-text">2.怎么理解Vue的单向数据流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-直接给一个数组项赋值，Vue能检测到变化吗？"><span class="nav-number"></span> <span class="nav-text">4.直接给一个数组项赋值，Vue能检测到变化吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Vue的父组件和子组件生命周期钩子函数执行顺序"><span class="nav-number"></span> <span class="nav-text">5.Vue的父组件和子组件生命周期钩子函数执行顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-在哪个生命周期内调用异步请求"><span class="nav-number"></span> <span class="nav-text">6.在哪个生命周期内调用异步请求?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-在什么阶段才能访问操作DOM"><span class="nav-number"></span> <span class="nav-text">7.在什么阶段才能访问操作DOM?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-父组件可以监听子组件的生命周期吗"><span class="nav-number"></span> <span class="nav-text">8.父组件可以监听子组件的生命周期吗?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-谈谈你对keep-alive的了解"><span class="nav-number"></span> <span class="nav-text">9.谈谈你对keep-alive的了解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-v-model的原理"><span class="nav-number"></span> <span class="nav-text">10.v-model的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-Vue组件间通信有哪几种方式"><span class="nav-number"></span> <span class="nav-text">11.Vue组件间通信有哪几种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-你用过Vuex吗？"><span class="nav-number"></span> <span class="nav-text">12.你用过Vuex吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-Vue是如何实现数据双向绑定的？"><span class="nav-number"></span> <span class="nav-text">13.Vue是如何实现数据双向绑定的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-Vue框架怎么实现对象和数组的监听？"><span class="nav-number"></span> <span class="nav-text">14.Vue框架怎么实现对象和数组的监听？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-Proxy与Object-defineProperty优劣对比"><span class="nav-number"></span> <span class="nav-text">15.Proxy与Object.defineProperty优劣对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-虚拟DOM的实现原理"><span class="nav-number"></span> <span class="nav-text">15.虚拟DOM的实现原理?</span></a></div>
             
 
           </div>

@@ -286,6 +286,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/11/js并集、交集、差集/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2021/03/11/js并集、交集、差集/" class="post-title-link" itemprop="url">js并集、交集、差集</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-03-11 00:44:50 / Modified: 01:54:49" itemprop="dateCreated datePublished" datetime="2021-03-11T00:44:50+08:00">2021-03-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="ES7-amp-Array-prototype-includes"><a href="#ES7-amp-Array-prototype-includes" class="headerlink" title="ES7&amp;Array.prototype.includes"></a><strong><code>ES7</code>&amp;<code>Array.prototype.includes</code></strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">let</span> union = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...a,...(b.filter(<span class="function"><span class="params">v</span>=&gt;</span>!a.includes(v)))]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">let</span> intersection = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...(a.filter(<span class="function"><span class="params">v</span>=&gt;</span>b.includes(v)))]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">let</span> difference = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...a,...b].filter(<span class="function"><span class="params">v</span>=&gt;</span>!a.includes(v)||!b.includes(v))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ES6-amp-Set"><a href="#ES6-amp-Set" class="headerlink" title="ES6&amp;Set"></a><strong><code>ES6</code>&amp;<code>Set</code></strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">let</span> union = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...a,...b]))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">let</span> intersection = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(a.filter(<span class="function"><span class="params">v</span>=&gt;</span>(<span class="keyword">new</span> <span class="built_in">Set</span>(b)).has(v)))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">let</span> difference = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Array</span>.from([...a,...b].filter(<span class="function"><span class="params">v</span>=&gt;</span>!(<span class="keyword">new</span> <span class="built_in">Set</span>(a)).has(v)||!(<span class="keyword">new</span> <span class="built_in">Set</span>(b)).has(v)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ES5-amp-indexOf"><a href="#ES5-amp-indexOf" class="headerlink" title="ES5&amp;indexOf"></a><strong><code>ES5</code>&amp;<code>indexOf</code></strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">var</span> union = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.concat(b.filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> a.indexOf(v) === <span class="number">-1</span></span><br><span class="line">	&#125;))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">var</span> intersection = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> b.indexOf(v) &gt; <span class="number">-1</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">var</span> difference = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.concat(b).filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.indexOf(v) === <span class="number">-1</span> || b.indexOf(v) === <span class="number">-1</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/04/vue-面试题（转载）/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -348,7 +493,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-03-08 23:45:14" itemprop="dateModified" datetime="2021-03-08T23:45:14+08:00">2021-03-08</time>
+                <time title="Modified: 2021-03-09 01:48:40" itemprop="dateModified" datetime="2021-03-09T01:48:40+08:00">2021-03-09</time>
               
             
           </span>
@@ -466,7 +611,7 @@
 <p>以<code>input</code>表单元素为例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; input v-model=<span class="string">"something"</span> /&gt;</span><br><span class="line"><span class="comment">// 相当于</span></span><br><span class="line">&lt;input v-bind:value=<span class="string">"something"</span> v-on:input=<span class="string">"something = $event.target.value"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <p>如果在自定义组件中，<code>v-model</code>默认会利用名为<code>value</code>的<code>prop</code>和名为<code>input</code>的事件，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">&lt;ModelChild v-model=<span class="string">"message"</span>&gt;&lt;/ModelChild&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件</span></span><br><span class="line">&lt;div&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">props:&#123;</span></span><br><span class="line"><span class="regexp">	value: String</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">  test1()&#123;</span></span><br><span class="line"><span class="regexp">    this.$emit('input','小红')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">&lt;ModelChild v-model=<span class="string">"message"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">ModelChild</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件</span></span><br><span class="line">&lt;div&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">props:&#123;</span></span><br><span class="line"><span class="regexp">	value: String</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">  test1()&#123;</span></span><br><span class="line"><span class="regexp">    this.$emit('input','小红')</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="11-Vue组件间通信有哪几种方式"><a href="#11-Vue组件间通信有哪几种方式" class="headerlink" title="11.Vue组件间通信有哪几种方式"></a><strong>11.<code>Vue</code>组件间通信有哪几种方式</strong></h4><p><code>Vue</code>组件间通信主要有：父子组件通信、隔代组件通信、兄弟组件通信</p>
 <ol>
 <li><p><code>prop / $emit</code>适用 <strong>父子组件通信</strong></p>
@@ -515,6 +660,23 @@
 </ul>
 <h4 id="14-Vue框架怎么实现对象和数组的监听？"><a href="#14-Vue框架怎么实现对象和数组的监听？" class="headerlink" title="14.Vue框架怎么实现对象和数组的监听？"></a><strong>14.<code>Vue</code>框架怎么实现对象和数组的监听？</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Observe a list of Array items.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">observeArray (items: <span class="built_in">Array</span>&lt;any&gt;) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, l = items.length; i &lt; l; i++) &#123;</span><br><span class="line">  	observe(items[i])  <span class="comment">// observe 功能为监测数据的变化</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对属性进行递归遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="keyword">let</span> childOb = !shallow &amp;&amp; observe(val) <span class="comment">// observe 功能为监测数据的变化</span></span><br></pre></td></tr></table></figure>
 <p><code>Vue</code>框架通过遍历数组和递归遍历对象，从而达到利用<code>Object.difineProperty()</code>也能对对象和数组（部分方法的操作）进行监听。</p>
+<h4 id="15-Proxy与Object-defineProperty优劣对比"><a href="#15-Proxy与Object-defineProperty优劣对比" class="headerlink" title="15.Proxy与Object.defineProperty优劣对比"></a><strong>15.<code>Proxy</code>与<code>Object.defineProperty</code>优劣对比</strong></h4><p><code>Proxy</code>的优势如下：</p>
+<ul>
+<li><code>Proxy</code>可以直接监听对象和非属性；</li>
+<li><code>Proxy</code>可以直接监听数组的变化；</li>
+<li><code>Proxy</code>有多达13种拦截方法啊，不限于<code>appley、</code>ownKeys<code>、</code>delectProperty<code>、</code>has<code>等等是</code>Object.defineProperty`不具备的；</li>
+<li><code>Proxy</code>返回的是一个新对象，我们可以只操作新对象而达到目的，而<code>Object.defineProperty</code>只能遍历对象属性直接修改；</li>
+<li><code>Proxy</code>作为新标准受到浏览器厂商重点持续的性能优化，也就是传说中的新标准的性能红利。</li>
+</ul>
+<p><code>Object.defineProperty</code>的优势如下：</p>
+<ul>
+<li>兼容性好，支持<code>IE9</code>，而<code>Proxy</code>存在浏览器兼容性问题，而且无法利用<code>polyfill</code>磨平。</li>
+</ul>
+<h4 id="15-虚拟DOM的实现原理"><a href="#15-虚拟DOM的实现原理" class="headerlink" title="15.虚拟DOM的实现原理?"></a><strong>15.虚拟<code>DOM</code>的实现原理?</strong></h4><ul>
+<li>用<code>javascript</code>对象模拟真实的<code>DOM</code>树，对真实的<code>DOM</code>进行抽象；</li>
+<li><code>diff</code>算法 – 比较两颗虚拟<code>DOM</code>树的差异；</li>
+<li><code>pach</code>算法 – 将两个虚拟<code>DOM</code>对象的差异应用到真正的<code>DOM</code>树</li>
+</ul>
 
           
         
@@ -1842,197 +2004,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/重绘和回流/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="哧溜"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="my blog!"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2020/07/20/重绘和回流/" class="post-title-link" itemprop="url">重绘和回流</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-07-20 15:30:27 / Modified: 16:45:09" itemprop="dateCreated datePublished" datetime="2020-07-20T15:30:27+08:00">2020-07-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="浏览器渲染机制"><a href="#浏览器渲染机制" class="headerlink" title="浏览器渲染机制"></a>浏览器渲染机制</h4><ul>
-<li>浏览器采用流式布局模型（<code>Flow Based Layout</code>）</li>
-<li>浏览器会把<code>HTML</code>解析成<code>DOM</code>，把<code>CSS</code>解析成<code>CSSDOM</code>，<code>DOM</code>和<code>CSSDOM</code>合并就产生了渲染树（<code>Render Tree</code>）</li>
-<li>有了<code>Render Tree</code>，我们就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制在页面上</li>
-<li>由于浏览器使用流式布局，对<code>Render Tree</code>的计算通常只需要遍历一次就可以完成，但<code>table</code>及其内部元素除外，他们可能需要多次计算，通常要花3倍于同等元素的时间，这也是为什么要避免使用table布局的原因之一</li>
-</ul>
-<h4 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h4><p>由于节点的几何属性发生改变或者由于样式发生改变而不会影响布局的，称为重绘,例如<code>outline</code>，<code>visibility</code>,<code>color</code>，<code>background-color</code>等，重绘的代价是高昂的，因为浏览器必须验证DOM树上其他节点元素的可见性</p>
-<h4 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h4><p>回流是布局或者几何属性需要改变就称为回流，回流是影响浏览器性能的关键因素，因为其变化涉及到部分页面（或是整个页面）的布局更新。一个元素的回流可能会导致了其他所有子元素以及DOM中紧随其后的节点、祖先节点元素的随后回流</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"error"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>我的组建<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>错误：<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>错误的描述...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>纠正错误<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>第一步<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>第二步<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在上面的HTML片段中，对该段落（<code>&lt;p&gt;</code>标签）回流将会引起强烈的回流，因为它是一个字节点。这也导致了祖先的回流（<code>div.error</code>和<code>body</code>-浏览器而定）。此外，<code>&lt;h5&gt;</code>和<code>&lt;ol&gt;</code>也会有简单的回流，因为其在DOM中在回流元素之后。<strong>大部门的回流会导致页面的重新渲染</strong></p>
-<p><strong>回流比定会发生重绘，重绘不一定会引发回流</strong> </p>
-<h4 id="浏览器优化"><a href="#浏览器优化" class="headerlink" title="浏览器优化"></a>浏览器优化</h4><p>现代浏览器大多都是通过队列机制来批量更新布局，浏览器会把修改操作放在队列中，至少一个浏览器刷新（即16.6ms）才会清空队列，但当你 <strong>获取布局信息的时候，队列中可能会影响这些属性或方法返回值的操作，即使没有，浏览器也会强制清空队列，触发回流和重绘来确保返回正确的值</strong></p>
-<p>主要包括以下属性或方法</p>
-<ul>
-<li><code>offsetTop</code>、<code>offsetLeft</code>、<code>offsetWidth</code>、<code>offsetHeight</code></li>
-<li><code>scrollTop</code>、<code>scrollLeft</code>、<code>scrollWidth</code>、<code>scrollHeight</code></li>
-<li><code>clientTop</code>、<code>clientLeft</code>、<code>clientWidth</code>、<code>clientHeight</code></li>
-<li><code>width</code>、<code>height</code></li>
-<li><code>getComputedStyle()</code></li>
-<li><code>getBoundingClientRect()</code></li>
-</ul>
-<p>所以，我们应该避免频繁的使用上述的属性，他们都会强制渲染刷新队列</p>
-<h4 id="减少重绘和回流"><a href="#减少重绘和回流" class="headerlink" title="减少重绘和回流"></a>减少重绘和回流</h4><ol>
-<li><p>CSS</p>
-<ul>
-<li><strong>使用 <code>transform</code> 替代 <code>top</code></strong></li>
-<li><strong>使用 <code>visibility</code> 替代 <code>display：none</code>，因为前者只会引起重绘</strong></li>
-<li><strong>避免使用 <code>table</code> 布局，可能很小的一个小改动会造成整个 <code>table</code> 的重新布局</strong></li>
-<li><strong>尽可能在 <code>DOM</code> 数的末端改变 <code>class</code> 回流是不可避免的，限制回流的范围，使其影响尽可能少的节点</strong></li>
-<li><strong>避免设置多层内联样式，<code>css</code> 选择符从右往左匹配查找，避免节点层级过多</strong></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  span &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  div &gt; a &gt; span &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>对于第一种设置样式的方式来说，浏览器只需要找到页面中所有的 <code>span</code> 标签然后设置颜色，但是对于第二种设置样式的方式来说，浏览器首先需要找到所有的 <code>span</code> 标签，然后找到 <code>span</code> 标签上的 <code>a</code> 标签，最后再去找到 <code>div</code> 标签，然后给符合这种条件的 <code>span</code> 标签设置颜色，这样的递归过程就很复杂。所以我们应该尽可能的避免写 <strong>过于具体</strong>的css选择器，然后对于 HTML 来说也尽量少的添加无意义的标签，保证 <strong>层级扁平</strong></p>
-<ul>
-<li><strong>将动画效果应用到 <code>position</code> 属性为 <code>absolute</code> 或 <code>fixed</code> 的元素上，避免影响其他元素的布局，这样只是一个重绘，而不会回流，同时，控制动画速度可以选择 <code>requestAnimationFrame</code></strong></li>
-<li><strong>避免使用 <code>css</code>表达式，可能会引发回流</strong></li>
-<li><strong>将频繁重绘或者回流的节点设置为图层，图层能过阻止该节点的渲染行为影响别的节点，例如 <code>will-change</code>、<code>video</code>、<code>iframe</code> 等标签，浏览器会自动将该节点变成图层</strong></li>
-<li><strong>CSS3 硬件加速（GPU加速），使用css3硬件加速，可以让 <code>transform</code>、<code>opacity</code>、<code>filters</code> 这些动画不会引起回流重绘，但是对于动画的其他属性，比如 <code>background-color</code> 这些，还是会引起回流重绘，不过它还是可以提升这些动画的性能</strong></li>
-</ul>
-</li>
-<li><p>JavaScript</p>
-<ul>
-<li><strong>避免频繁操作样式，做好一次性重写 <code>style</code> 属性，或者将样式列表定义为 <code>class</code> 并一次性更改 <code>class</code> 属性</strong></li>
-<li><strong>避免频繁操作 <code>DOM</code> ，创建一个 <code>documentFragment</code>，在它上面应用所有 <code>DOM</code> 操作，最后再把它添加到文档中</strong></li>
-<li><strong>避免频繁读取会引发回流/重绘的属性，如果确实需要多次使用，就用一个变量缓存起来</strong></li>
-<li><strong>对具有复杂动画的元素使用绝对定位，是他脱离文档，否则会引起父元素及后续元素频繁回流</strong></li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2079,7 +2050,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

@@ -96,18 +96,17 @@
 
 
 
-  <meta name="description" content="闭包闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包 1234567function A()&amp;#123;  let a = 1;  function B()&amp;#123;    console.log(a);  &amp;#125;  return B&amp;#125; 经典面试题，循环中使用闭包解决了var定义函数问题 12345for(var i=1; i&amp;lt;=5">
-<meta name="keywords" content="js">
+  <meta name="description" content="ES7&amp;amp;Array.prototype.includes123456789101112// 并集let union = function(a,b)&amp;#123;	return [...a,...(b.filter(v=&amp;gt;!a.includes(v)))]&amp;#125;// 交集let intersection = function(a,b)&amp;#123;	return [...(a.fil">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2020/07/02/闭包/index.html">
+<meta property="og:title" content="js并集、交集、差集">
+<meta property="og:url" content="http://yoursite.com/2021/03/11/js并集、交集、差集/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="闭包闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包 1234567function A()&amp;#123;  let a = 1;  function B()&amp;#123;    console.log(a);  &amp;#125;  return B&amp;#125; 经典面试题，循环中使用闭包解决了var定义函数问题 12345for(var i=1; i&amp;lt;=5">
+<meta property="og:description" content="ES7&amp;amp;Array.prototype.includes123456789101112// 并集let union = function(a,b)&amp;#123;	return [...a,...(b.filter(v=&amp;gt;!a.includes(v)))]&amp;#125;// 交集let intersection = function(a,b)&amp;#123;	return [...(a.fil">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-02T02:56:37.404Z">
+<meta property="og:updated_time" content="2021-03-10T17:54:49.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="闭包闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包 1234567function A()&amp;#123;  let a = 1;  function B()&amp;#123;    console.log(a);  &amp;#125;  return B&amp;#125; 经典面试题，循环中使用闭包解决了var定义函数问题 12345for(var i=1; i&amp;lt;=5">
+<meta name="twitter:title" content="js并集、交集、差集">
+<meta name="twitter:description" content="ES7&amp;amp;Array.prototype.includes123456789101112// 并集let union = function(a,b)&amp;#123;	return [...a,...(b.filter(v=&amp;gt;!a.includes(v)))]&amp;#125;// 交集let intersection = function(a,b)&amp;#123;	return [...(a.fil">
 
 
 
@@ -115,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/07/02/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/03/11/js并集、交集、差集/"/>
 
 
 
@@ -125,7 +124,7 @@
   };
 </script>
 
-  <title>闭包 | my blog!</title>
+  <title>js并集、交集、差集 | my blog!</title>
   
 
 
@@ -290,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/02/闭包/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/11/js并集、交集、差集/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="哧溜"/>
@@ -307,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包
+          <h1 class="post-title" itemprop="name headline">js并集、交集、差集
 
               
             
@@ -333,7 +332,7 @@
                 
               
 
-              <time title="Created: 2020-07-02 10:35:28 / Modified: 10:56:37" itemprop="dateCreated datePublished" datetime="2020-07-02T10:35:28+08:00">2020-07-02</time>
+              <time title="Created: 2021-03-11 00:44:50 / Modified: 01:54:49" itemprop="dateCreated datePublished" datetime="2021-03-11T00:44:50+08:00">2021-03-11</time>
             
 
             
@@ -372,19 +371,9 @@
       
 
       
-        <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包的定义很简单：函数A返回了一个函数B，并且函数B中使用了函数A的变量，函数B就称为闭包</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> B</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>经典面试题，循环中使用闭包解决了<code>var</code>定义函数问题</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;, i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先因为<code>setTimeout</code>是个异步函数，所有会把循环全部执行完毕，这时候<code>i</code>就是6了，所以会输出一堆6</p>
-<p>解决办法有两种，第一种使用闭包</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(j)</span><br><span class="line">    &#125;,j*<span class="number">1000</span>)</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第二种就是使用<code>setTimeout</code>的第三个参数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(j)</span><br><span class="line">  &#125;,i*<span class="number">1000</span>,i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第三种就是使用<code>let</code>定义<code>i</code>了</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;,i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于<code>let</code>来说，他会创建一个块级作用域，相当于</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="comment">//形成块级作用域</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> ii = i</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(ii)</span><br><span class="line">    &#125;,i*<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  i++</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> ii = i</span><br><span class="line">	&#125;</span><br><span class="line">  i++</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">let</span> ii = i</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="ES7-amp-Array-prototype-includes"><a href="#ES7-amp-Array-prototype-includes" class="headerlink" title="ES7&amp;Array.prototype.includes"></a><strong><code>ES7</code>&amp;<code>Array.prototype.includes</code></strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">let</span> union = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...a,...(b.filter(<span class="function"><span class="params">v</span>=&gt;</span>!a.includes(v)))]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">let</span> intersection = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...(a.filter(<span class="function"><span class="params">v</span>=&gt;</span>b.includes(v)))]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">let</span> difference = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [...a,...b].filter(<span class="function"><span class="params">v</span>=&gt;</span>!a.includes(v)||!b.includes(v))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ES6-amp-Set"><a href="#ES6-amp-Set" class="headerlink" title="ES6&amp;Set"></a><strong><code>ES6</code>&amp;<code>Set</code></strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">let</span> union = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([...a,...b]))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">let</span> intersection = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(a.filter(<span class="function"><span class="params">v</span>=&gt;</span>(<span class="keyword">new</span> <span class="built_in">Set</span>(b)).has(v)))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">let</span> difference = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Array</span>.from([...a,...b].filter(<span class="function"><span class="params">v</span>=&gt;</span>!(<span class="keyword">new</span> <span class="built_in">Set</span>(a)).has(v)||!(<span class="keyword">new</span> <span class="built_in">Set</span>(b)).has(v)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ES5-amp-indexOf"><a href="#ES5-amp-indexOf" class="headerlink" title="ES5&amp;indexOf"></a><strong><code>ES5</code>&amp;<code>indexOf</code></strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 并集</span></span><br><span class="line"><span class="keyword">var</span> union = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.concat(b.filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> a.indexOf(v) === <span class="number">-1</span></span><br><span class="line">	&#125;))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 交集</span></span><br><span class="line"><span class="keyword">var</span> intersection = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> b.indexOf(v) &gt; <span class="number">-1</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 差集</span></span><br><span class="line"><span class="keyword">var</span> difference = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.concat(b).filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.indexOf(v) === <span class="number">-1</span> || b.indexOf(v) === <span class="number">-1</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -406,12 +395,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-        </div>
-      
 
       
       
@@ -421,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/01/操作符/" rel="next" title="操作符">
-                <i class="fa fa-chevron-left"></i> 操作符
+              <a href="/2021/03/04/vue-面试题（转载）/" rel="next" title="vue 面试题（转载）">
+                <i class="fa fa-chevron-left"></i> vue 面试题（转载）
               </a>
             
           </div>
@@ -430,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/06/压缩图片/" rel="prev" title="压缩图片">
-                压缩图片 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -569,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES7-amp-Array-prototype-includes"><span class="nav-number">1.</span> <span class="nav-text">ES7&amp;Array.prototype.includes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6-amp-Set"><span class="nav-number">2.</span> <span class="nav-text">ES6&amp;Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES5-amp-indexOf"><span class="nav-number">3.</span> <span class="nav-text">ES5&amp;indexOf</span></a></li></ol></div>
             
 
           </div>
