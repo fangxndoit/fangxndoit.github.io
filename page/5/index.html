@@ -1,23 +1,1415 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="my blog!">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="my blog!">
+<meta property="og:locale">
+<meta property="article:author" content="哧溜">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/page/5/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>my blog!</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">my blog!</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/react-hook-%E5%B0%8F%E8%AE%B0/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/03/26/react-hook-%E5%B0%8F%E8%AE%B0/" class="post-title-link" itemprop="url">react-hook 小记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-03-26 10:12:32 / Modified: 11:08:46" itemprop="dateCreated datePublished" datetime="2020-03-26T10:12:32+08:00">2020-03-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="模拟React的生命周期"><a href="#模拟React的生命周期" class="headerlink" title="模拟React的生命周期"></a>模拟React的生命周期</h4><ul>
+<li>constructor：函数组件不需要构造函数。你可以通过调用 useState 来初始化 state。</li>
+<li>componentDidMount：通过 useEffect 传入第二个参数为[]实现。</li>
+<li>componentDidUpdate：通过 useEffect 传入第二个参数为空或者为值变动的数组。</li>
+<li>componentWillUnmount：主要用来清除副作用。通过 useEffect 函数 return 一个函数来模拟。</li>
+<li>shouldComponentUpdate：你可以用 React.memo 包裹一个组件来对它的 props 进行浅比较。来模拟是否更新组件。</li>
+</ul>
+<h4 id="React-Hook进行数据请求"><a href="#React-Hook进行数据请求" class="headerlink" title="React Hook进行数据请求"></a>React Hook进行数据请求</h4><p>Class组件 我们通常在<font color="red"> componentDidMount </font>生命周期发起请求，但是使用Hook时，发送请求使用的是<font color="red"> useEffect </font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">import React,&#123; useState,useEffect &#125; from <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default <span class="keyword">function</span> <span class="function"><span class="title">App</span></span>() &#123;</span><br><span class="line">  const [data, setData] = useState(null);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    const fetchData = async () =&gt; &#123;</span><br><span class="line">      const result = await axios(</span><br><span class="line">        <span class="string">&quot;https://test.com/example/queryList&quot;</span></span><br><span class="line">      );</span><br><span class="line">      setData(result.data); // 赋值获取后的数据</span><br><span class="line">    &#125;;</span><br><span class="line">    fetchData();</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;data ? (</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li&gt;&#123;`<span class="built_in">id</span>：<span class="variable">$&#123;data.id&#125;</span>`&#125;&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;&#123;`title：<span class="variable">$&#123;data.title&#125;</span>`&#125;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      ) : null&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果 <font color="red"> useEffect </font> 第二个参数不传入，导致每次data更新都会执行，这样就陷入死循环循环了。需要改造下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">  ···</span><br><span class="line">  useEffect(()=&gt;&#123;</span><br><span class="line">    ···</span><br><span class="line">  &#125;,[])</span><br><span class="line">  ···</span><br></pre></td></tr></table></figure>
+
+<p>我们一个程序会有多个组件，很多组件都会有请求接口的逻辑, 为了统一处理，一般我们会使用<font color="red"> 自定义Hook </font>抽离出请求，作为一个公共的Hook</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">// config =&gt;  期望格式</span><br><span class="line">// &#123;</span><br><span class="line">//     method: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">//     url: <span class="string">&#x27;/user/12345&#x27;</span>,</span><br><span class="line">//     data: &#123;</span><br><span class="line">//         firstName: <span class="string">&#x27;Fred&#x27;</span>,</span><br><span class="line">//         lastName: <span class="string">&#x27;Flintstone&#x27;</span></span><br><span class="line">//     &#125;</span><br><span class="line">// &#125;</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config)&#123;</span><br><span class="line">    const [data,setData] = useState(null);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        const fetchData = async () =&gt; &#123;</span><br><span class="line">            const result = await axios(config);</span><br><span class="line">            setData(result.data)</span><br><span class="line">        &#125;;</span><br><span class="line">        fetchData();</span><br><span class="line">    &#125;,[]);</span><br><span class="line">    <span class="built_in">return</span> &#123; data &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>引用<font color="red"> useFetchHook </font>就可以直接调用</p>
+<p>（优化）传入监听值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">// watch =&gt; 期望格式是 []</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config,watch)&#123;</span><br><span class="line">    const [data,setData] = useState(null);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    watch?[...watch]:[] // 判断是否有需要监测的属性</span><br><span class="line">    );</span><br><span class="line">    <span class="built_in">return</span> &#123; data &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（优化）添加请求状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config,watch)&#123;</span><br><span class="line">    // status 标识当前接口请求状态 0：请求中 1：请求成功 2：请求失败</span><br><span class="line">    const [status,setStatus] = useState(0);</span><br><span class="line">    const [data,setData] = useState(null);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        try&#123;</span><br><span class="line">            ...</span><br><span class="line">            setStatus(1) // 成功</span><br><span class="line">        &#125;catch(err)&#123;</span><br><span class="line">            setStatus(2) // 失败</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    watch?[...watch]:[] // 判断是否有需要监测的属性</span><br><span class="line">    );</span><br><span class="line">    <span class="built_in">return</span> &#123; data, status &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常用的如下，如需优化loading toast… 可以动态添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config, watch) &#123;</span><br><span class="line">    const [data, setData] = useState(null);</span><br><span class="line">    const [status, setStatus] = useState(0);</span><br><span class="line">    useEffect(</span><br><span class="line">        () =&gt; &#123;</span><br><span class="line">        const fetchData = async () =&gt; &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">            const result = await axios(config);</span><br><span class="line">            setData(result.data);</span><br><span class="line">            setStatus(1);</span><br><span class="line">            &#125; catch (err) &#123;</span><br><span class="line">            setStatus(2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        fetchData();</span><br><span class="line">        &#125;,</span><br><span class="line">        watch ? [watch] : []</span><br><span class="line">    );</span><br><span class="line">    <span class="built_in">return</span> &#123; data, status &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用提高性能"><a href="#常用提高性能" class="headerlink" title="常用提高性能"></a>常用提高性能</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">class App extends Component&#123;</span><br><span class="line">    <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> </span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Button onClick=&#123; () =&gt; &#123; console.log(<span class="string">&#x27;do something&#x27;</span>); &#125;&#125;  /&gt;</span><br><span class="line">        &lt;/div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面App组件如果props发生改变时，就会重新渲染组件。如果这个修改并不涉及到Button组件，但是由于每次render的时候都会产生新的onClick函数，react就认为其发生了改变，从而产生了不必要的渲染而引起性能浪费</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">class App extends Component&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>()&#123;</span><br><span class="line">        super();</span><br><span class="line">        this.buttonClick = this.buttonClick.<span class="built_in">bind</span>(this);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> </span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Button onClick=&#123; this.buttonClick &#125;  /&gt;</span><br><span class="line">        &lt;/div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在类组件中我们可以直接将函数绑定到this对象上，<br>但是在Hook上可以使用<font color="red"> useCallback </font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">App</span></span>()&#123;</span><br><span class="line">    const buttonClick = useCallback(</span><br><span class="line">        () =&gt; &#123; console.log(<span class="string">&#x27;do something&#x27;</span>),[]</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">return</span>(</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Button onClick=&#123; buttonClick &#125;  /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/vue%E7%9B%B8%E5%85%B3%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2020/03/25/vue%E7%9B%B8%E5%85%B3%E5%B0%8F%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">vue小知识</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-03-25 17:43:26 / Modified: 17:55:48" itemprop="dateCreated datePublished" datetime="2020-03-25T17:43:26+08:00">2020-03-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="不要在同个元素上同时使用-v-if-和-v-if-指令"><a href="#不要在同个元素上同时使用-v-if-和-v-if-指令" class="headerlink" title="不要在同个元素上同时使用 v-if 和 v-if 指令"></a>不要在同个元素上同时使用 <font color="red">v-if</font> 和 <font color="red">v-if</font> 指令</h5><p>为了过滤数组中的元素，我们很容易将v-if与v-for在同个元素同时使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 不好的做法</span><br><span class="line">&lt;div v-for=<span class="string">&#x27;product in products&#x27;</span> v-if=<span class="string">&#x27;product.price &lt; 500&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>问题是在 Vue 优先使用v-for指令，而不是v-if指令。它循环遍历每个元素，然后检查v-if条件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.products.map(<span class="keyword">function</span> (product) &#123;</span><br><span class="line">  <span class="keyword">if</span> (product.price &lt; 500) &#123;</span><br><span class="line">    <span class="built_in">return</span> product</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这意味着，即使我们只想渲染列表中的几个元素，也必须遍历整个数组。</p>
+<p>这对我们来当然没有任何好处。</p>
+<p>一个更聪明的解决方案是遍历一个计算属性，可以把上面的例子重构成下面这样的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=<span class="string">&#x27;product in cheapProducts&#x27;</span>&gt;</span><br><span class="line"> </span><br><span class="line">computed: &#123;</span><br><span class="line">  cheapProducts: () =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> this.products.filter(<span class="keyword">function</span> (product) &#123;</span><br><span class="line">      <span class="built_in">return</span> product.price &lt; 100</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="这么做有几个好处："><a href="#这么做有几个好处：" class="headerlink" title="这么做有几个好处："></a>这么做有几个好处：</h4><ul>
+<li><p>渲染效率更高，因为我们不会遍历所有元素</p>
+</li>
+<li><p>仅当依赖项更改时，才会重使用过滤后的列表</p>
+</li>
+<li><p>这写法有助于将组件逻辑从模板中分离出来，使组件更具可读性</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/hello-world/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/28/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-28 11:00:31" itemprop="dateCreated datePublished" datetime="2019-05-28T11:00:31+08:00">2019-05-28</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/javascript%20%E4%BA%8B%E4%BB%B6%E6%89%98%E7%AE%A1/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/28/javascript%20%E4%BA%8B%E4%BB%B6%E6%89%98%E7%AE%A1/" class="post-title-link" itemprop="url">javascript 事件托管</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-28 11:00:31" itemprop="dateCreated datePublished" datetime="2019-05-28T11:00:31+08:00">2019-05-28</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>事件委托是指利用<strong>事件冒泡</strong>，指定一个事件处理程序，管理某一类型的事件</p>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>在 document.addEventListener 的时候我们可以设置事件模型：<strong>事件冒泡</strong>、<strong>事件捕获</strong></p>
+<p><img src="http://jbcdn2.b0.upaiyun.com/2017/05/a6f74035ad4fd5dae82fdb4ed2761287.png" alt="事件模型"></p>
+<h4 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h4><ul>
+<li>捕获阶段：在事件冒泡的模型中，捕获阶段不会相应任何事件；</li>
+<li>目标阶段：事件相应到触发事件的最底层元素上</li>
+<li>冒泡阶段：事件的触发相应会从最底层目标一层层地向外到最外层（根节点），事件代理就是利用事件冒泡的机制把里层所需要相应的事件绑定到外层</li>
+</ul>
+<h4 id="常见例子"><a href="#常见例子" class="headerlink" title="常见例子"></a>常见例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;menu&#x27;</span>).<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="comment">//兼容IE</span></span><br><span class="line">    e = e || <span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line">    <span class="keyword">var</span> target = e.<span class="property">target</span> || e.<span class="property">srcElement</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (target.<span class="property">nodeName</span> !== <span class="string">&#x27;A&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ... <span class="comment">// 需要对a标签所做的处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="comment">//兼容IE</span></span><br><span class="line">    e = e || <span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line">    <span class="keyword">var</span> target = e.<span class="property">target</span> || e.<span class="property">srcElement</span>,</span><br><span class="line">        targetNodeName = target.<span class="property">nodeName</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (targetNodeName == <span class="string">&#x27;A&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// 一些处理...</span></span><br><span class="line">    &#125;<span class="title function_">elseif</span>(<span class="params">targetNodeName == <span class="string">&#x27;li&#x27;</span></span>)&#123;</span><br><span class="line">        <span class="comment">// 一些处理...</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 一些处理...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/28/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/28/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="post-title-link" itemprop="url">vue生命周期</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-28 11:00:31" itemprop="dateCreated datePublished" datetime="2019-05-28T11:00:31+08:00">2019-05-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-25 17:42:43" itemprop="dateModified" datetime="2020-03-25T17:42:43+08:00">2020-03-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期"></p>
+<h4 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h4><table>
+<thead>
+<tr>
+<th>状态</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>new vue</td>
+<td>创建vue实例</td>
+</tr>
+<tr>
+<td>init events &amp; lifecycle</td>
+<td>开始初始化</td>
+</tr>
+<tr>
+<td>beforeCreate</td>
+<td>组件刚被创建，组建属性计算之前，如data属性等</td>
+</tr>
+<tr>
+<td>init injections &amp; reactivity</td>
+<td>通过依赖注入导入依赖项</td>
+</tr>
+<tr>
+<td>created</td>
+<td>组件实例创建完成，属性已绑定，此时DOM还未生成</td>
+</tr>
+<tr>
+<td>el属性</td>
+<td>检查vue配置，即new Vue{}里面的el项是否存在，有就继续检查template项。没有则等到手动绑定调用vm.$mount()</td>
+</tr>
+<tr>
+<td>template</td>
+<td>检查配置中的template项，如果没有template进行填充被绑定区域，则被绑定区域的el对象的outerHTML（即整个#app DOM对象，包括<div id="”app”">和</div>标签）都作为被填充对象替换掉填充区域</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>模板编译、挂载之前</td>
+</tr>
+<tr>
+<td>create vm.$el and replace “el” with it</td>
+<td>编译，并替换了被绑定元素</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>编译、挂载</td>
+</tr>
+<tr>
+<td>Before update</td>
+<td>组件更新之前</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>组件更新之后</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>当vm.$destroy()被调用，开始拆卸组件和监听器，生命周期终结</td>
+</tr>
+</tbody></table>
+<p>[表格标题]</p>
+<h4 id="生命周期的历程"><a href="#生命周期的历程" class="headerlink" title="生命周期的历程"></a>生命周期的历程</h4><ul>
+<li>new Vue： 创建vue实例</li>
+<li>beforecreated： 监测数据，初始化事件</li>
+<li>created：绑定数据和事件，此时可以访问修改data，访问methods</li>
+<li>beforeMount： 模板编译，生成 dom 但未挂载</li>
+<li>mounted： 编译，挂载，实例数据在dom上渲染</li>
+<li>beforeUpdate： 数据更新，但不进行DOM重新渲染</li>
+<li>updated： 更新数据，进行dom渲染</li>
+<li>beforeDestory： 实例销毁</li>
+<li>destroyed： 实例销毁，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</li>
+</ul>
+<h4 id="什么时候需要用到Vue-nextTick"><a href="#什么时候需要用到Vue-nextTick" class="headerlink" title="什么时候需要用到Vue.nextTick()"></a>什么时候需要用到Vue.nextTick()</h4><ol>
+<li>在 Vue 生命周期的 created() 钩子函数进行的 DOM 操作一定要放在 Vue.nextTick() 的回调函数中。原因是什么呢，原因是<br>在 created() 钩子函数执行的时候 DOM 其实并未进行任何渲染，而此时进行 DOM 操作无异于徒劳，所以此处一定要将 DOM 操作<br>的 js 代码放进 Vue.nextTick() 的回调函数中。与之对应的就是 mounted 钩子函数，因为该钩子函数执行时所有的 DOM 挂载和<br>渲染都已完成，此时在该钩子函数中进行任何DOM操作都不会有问题 。</li>
+<li>在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的 DOM 结构的时候，这个操作都应该放<br>进 Vue.nextTick() 的回调函数中。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot; aria-label&#x3D;&quot;Previous page&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">哧溜</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/%20%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">哧溜</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v6.2.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

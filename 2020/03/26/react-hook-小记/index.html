@@ -1,23 +1,773 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="模拟React的生命周期 constructor：函数组件不需要构造函数。你可以通过调用 useState 来初始化 state。 componentDidMount：通过 useEffect 传入第二个参数为[]实现。 componentDidUpdate：通过 useEffect 传入第二个参数为空或者为值变动的数组。 componentWillUnmount：主要用来清除副作用。通过 use">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-hook 小记">
+<meta property="og:url" content="http://yoursite.com/2020/03/26/react-hook-%E5%B0%8F%E8%AE%B0/index.html">
+<meta property="og:site_name" content="my blog!">
+<meta property="og:description" content="模拟React的生命周期 constructor：函数组件不需要构造函数。你可以通过调用 useState 来初始化 state。 componentDidMount：通过 useEffect 传入第二个参数为[]实现。 componentDidUpdate：通过 useEffect 传入第二个参数为空或者为值变动的数组。 componentWillUnmount：主要用来清除副作用。通过 use">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-03-26T02:12:32.000Z">
+<meta property="article:modified_time" content="2020-03-26T03:08:46.786Z">
+<meta property="article:author" content="哧溜">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/03/26/react-hook-%E5%B0%8F%E8%AE%B0/"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>react-hook 小记 | my blog!</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">my blog!</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/react-hook-%E5%B0%8F%E8%AE%B0/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="哧溜"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="my blog!"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react-hook 小记
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-03-26 10:12:32 / Modified: 11:08:46" itemprop="dateCreated datePublished" datetime="2020-03-26T10:12:32+08:00">2020-03-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="模拟React的生命周期"><a href="#模拟React的生命周期" class="headerlink" title="模拟React的生命周期"></a>模拟React的生命周期</h4><ul>
+<li>constructor：函数组件不需要构造函数。你可以通过调用 useState 来初始化 state。</li>
+<li>componentDidMount：通过 useEffect 传入第二个参数为[]实现。</li>
+<li>componentDidUpdate：通过 useEffect 传入第二个参数为空或者为值变动的数组。</li>
+<li>componentWillUnmount：主要用来清除副作用。通过 useEffect 函数 return 一个函数来模拟。</li>
+<li>shouldComponentUpdate：你可以用 React.memo 包裹一个组件来对它的 props 进行浅比较。来模拟是否更新组件。</li>
+</ul>
+<h4 id="React-Hook进行数据请求"><a href="#React-Hook进行数据请求" class="headerlink" title="React Hook进行数据请求"></a>React Hook进行数据请求</h4><p>Class组件 我们通常在<font color="red"> componentDidMount </font>生命周期发起请求，但是使用Hook时，发送请求使用的是<font color="red"> useEffect </font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">import React,&#123; useState,useEffect &#125; from <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default <span class="keyword">function</span> <span class="function"><span class="title">App</span></span>() &#123;</span><br><span class="line">  const [data, setData] = useState(null);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    const fetchData = async () =&gt; &#123;</span><br><span class="line">      const result = await axios(</span><br><span class="line">        <span class="string">&quot;https://test.com/example/queryList&quot;</span></span><br><span class="line">      );</span><br><span class="line">      setData(result.data); // 赋值获取后的数据</span><br><span class="line">    &#125;;</span><br><span class="line">    fetchData();</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;data ? (</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">          &lt;li&gt;&#123;`<span class="built_in">id</span>：<span class="variable">$&#123;data.id&#125;</span>`&#125;&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;&#123;`title：<span class="variable">$&#123;data.title&#125;</span>`&#125;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      ) : null&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果 <font color="red"> useEffect </font> 第二个参数不传入，导致每次data更新都会执行，这样就陷入死循环循环了。需要改造下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">  ···</span><br><span class="line">  useEffect(()=&gt;&#123;</span><br><span class="line">    ···</span><br><span class="line">  &#125;,[])</span><br><span class="line">  ···</span><br></pre></td></tr></table></figure>
+
+<p>我们一个程序会有多个组件，很多组件都会有请求接口的逻辑, 为了统一处理，一般我们会使用<font color="red"> 自定义Hook </font>抽离出请求，作为一个公共的Hook</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">// config =&gt;  期望格式</span><br><span class="line">// &#123;</span><br><span class="line">//     method: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">//     url: <span class="string">&#x27;/user/12345&#x27;</span>,</span><br><span class="line">//     data: &#123;</span><br><span class="line">//         firstName: <span class="string">&#x27;Fred&#x27;</span>,</span><br><span class="line">//         lastName: <span class="string">&#x27;Flintstone&#x27;</span></span><br><span class="line">//     &#125;</span><br><span class="line">// &#125;</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config)&#123;</span><br><span class="line">    const [data,setData] = useState(null);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        const fetchData = async () =&gt; &#123;</span><br><span class="line">            const result = await axios(config);</span><br><span class="line">            setData(result.data)</span><br><span class="line">        &#125;;</span><br><span class="line">        fetchData();</span><br><span class="line">    &#125;,[]);</span><br><span class="line">    <span class="built_in">return</span> &#123; data &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>引用<font color="red"> useFetchHook </font>就可以直接调用</p>
+<p>（优化）传入监听值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">// watch =&gt; 期望格式是 []</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config,watch)&#123;</span><br><span class="line">    const [data,setData] = useState(null);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    watch?[...watch]:[] // 判断是否有需要监测的属性</span><br><span class="line">    );</span><br><span class="line">    <span class="built_in">return</span> &#123; data &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（优化）添加请求状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config,watch)&#123;</span><br><span class="line">    // status 标识当前接口请求状态 0：请求中 1：请求成功 2：请求失败</span><br><span class="line">    const [status,setStatus] = useState(0);</span><br><span class="line">    const [data,setData] = useState(null);</span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        try&#123;</span><br><span class="line">            ...</span><br><span class="line">            setStatus(1) // 成功</span><br><span class="line">        &#125;catch(err)&#123;</span><br><span class="line">            setStatus(2) // 失败</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    watch?[...watch]:[] // 判断是否有需要监测的属性</span><br><span class="line">    );</span><br><span class="line">    <span class="built_in">return</span> &#123; data, status &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常用的如下，如需优化loading toast… 可以动态添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line"><span class="keyword">function</span> useFetchHook(config, watch) &#123;</span><br><span class="line">    const [data, setData] = useState(null);</span><br><span class="line">    const [status, setStatus] = useState(0);</span><br><span class="line">    useEffect(</span><br><span class="line">        () =&gt; &#123;</span><br><span class="line">        const fetchData = async () =&gt; &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">            const result = await axios(config);</span><br><span class="line">            setData(result.data);</span><br><span class="line">            setStatus(1);</span><br><span class="line">            &#125; catch (err) &#123;</span><br><span class="line">            setStatus(2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        fetchData();</span><br><span class="line">        &#125;,</span><br><span class="line">        watch ? [watch] : []</span><br><span class="line">    );</span><br><span class="line">    <span class="built_in">return</span> &#123; data, status &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用提高性能"><a href="#常用提高性能" class="headerlink" title="常用提高性能"></a>常用提高性能</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">class App extends Component&#123;</span><br><span class="line">    <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> </span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Button onClick=&#123; () =&gt; &#123; console.log(<span class="string">&#x27;do something&#x27;</span>); &#125;&#125;  /&gt;</span><br><span class="line">        &lt;/div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面App组件如果props发生改变时，就会重新渲染组件。如果这个修改并不涉及到Button组件，但是由于每次render的时候都会产生新的onClick函数，react就认为其发生了改变，从而产生了不必要的渲染而引起性能浪费</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line">class App extends Component&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>()&#123;</span><br><span class="line">        super();</span><br><span class="line">        this.buttonClick = this.buttonClick.<span class="built_in">bind</span>(this);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> </span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Button onClick=&#123; this.buttonClick &#125;  /&gt;</span><br><span class="line">        &lt;/div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在类组件中我们可以直接将函数绑定到this对象上，<br>但是在Hook上可以使用<font color="red"> useCallback </font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// javascript</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">App</span></span>()&#123;</span><br><span class="line">    const buttonClick = useCallback(</span><br><span class="line">        () =&gt; &#123; console.log(<span class="string">&#x27;do something&#x27;</span>),[]</span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">return</span>(</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Button onClick=&#123; buttonClick &#125;  /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/25/vue%E7%9B%B8%E5%85%B3%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="next" title="vue小知识">
+                <i class="fa fa-chevron-left"></i> vue小知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/26/vue-react-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%AE%BE%E9%85%8D/" rel="prev" title="vue/react 移动端设配">
+                vue/react 移动端设配 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">哧溜</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/%20%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9FReact%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.</span> <span class="nav-text">模拟React的生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Hook%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="nav-number">2.</span> <span class="nav-text">React Hook进行数据请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">常用提高性能</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">哧溜</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v6.2.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
