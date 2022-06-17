@@ -16,22 +16,21 @@
   <meta name="author" content="哧溜">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1234567&#x2F;&#x2F;to.jsexport default function to(promise)&amp;#123;  return promise.then(data &#x3D;&gt; &amp;#123;    return [null,data]  &amp;#125;)  .catch(err &#x3D;&gt; [err])&amp;#125;  #####工具函数 #####使用方法 1234567891011121314151">
+    <meta name="description" content="HTTP Request Header常见的请求头 Accept：浏览器能够处理的内容类型 Accept-Charset：浏览器能够显示的字符集 Accept-Encoding：浏览器能够处理的压缩编码 Accept-Language：浏览器当前设置的语言 Connection：浏览器与服务器之间的连接类型 Cookie：当前页面设置的任何Cookie Host：发出请求的页面所在的域 Refer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="捕获async&#x2F;await异常">
-<meta property="og:url" content="http://yoursite.com/2020/09/21/%E6%8D%95%E8%8E%B7async-await%E5%BC%82%E5%B8%B8/index.html">
+<meta property="og:title" content="常见HTTP请求头和响应头">
+<meta property="og:url" content="http://yoursite.com/2022/06/17/%E5%B8%B8%E8%A7%81HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E5%93%8D%E5%BA%94%E5%A4%B4/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="1234567&#x2F;&#x2F;to.jsexport default function to(promise)&amp;#123;  return promise.then(data &#x3D;&gt; &amp;#123;    return [null,data]  &amp;#125;)  .catch(err &#x3D;&gt; [err])&amp;#125;  #####工具函数 #####使用方法 1234567891011121314151">
+<meta property="og:description" content="HTTP Request Header常见的请求头 Accept：浏览器能够处理的内容类型 Accept-Charset：浏览器能够显示的字符集 Accept-Encoding：浏览器能够处理的压缩编码 Accept-Language：浏览器当前设置的语言 Connection：浏览器与服务器之间的连接类型 Cookie：当前页面设置的任何Cookie Host：发出请求的页面所在的域 Refer">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-09-21T09:16:26.000Z">
-<meta property="article:modified_time" content="2020-09-21T10:18:01.763Z">
+<meta property="article:published_time" content="2022-06-17T13:31:51.000Z">
+<meta property="article:modified_time" content="2022-06-17T14:02:54.334Z">
 <meta property="article:author" content="哧溜">
-<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>捕获async/await异常 - my blog!</title>
+  <title>常见HTTP请求头和响应头 - my blog!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="捕获async/await异常"></span>
+            <span id="subtitle" data-typed-text="常见HTTP请求头和响应头"></span>
           
         </div>
 
@@ -205,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-09-21 17:16" pubdate>
-          September 21, 2020 pm
+        <time datetime="2022-06-17 21:31" pubdate>
+          June 17, 2022 pm
         </time>
       </span>
     
@@ -217,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          720 vortoj
+          730 vortoj
         
       </span>
     
@@ -266,30 +265,44 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">捕获async/await异常</h1>
+            <h1 style="display: none">常见HTTP请求头和响应头</h1>
             
             <div class="markdown-body">
               
-              <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//to.js</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">to</span>(<span class="hljs-params">promise</span>)&#123;<br>  <span class="hljs-keyword">return</span> promise.<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> [<span class="hljs-literal">null</span>,data]<br>  &#125;)<br>  .<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> [err])<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>#####工具函数</p>
-<p>#####使用方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> to <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./to.js&#x27;</span>;<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">asyncTask</span>(<span class="hljs-params"></span>) &#123;<br>     <span class="hljs-keyword">let</span> err, user, savedTask;<br><br>     [err, user] = <span class="hljs-keyword">await</span> <span class="hljs-title function_">to</span>(<span class="hljs-title class_">UserModel</span>.<span class="hljs-title function_">findById</span>(<span class="hljs-number">1</span>));<br>     <span class="hljs-keyword">if</span>(!user) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomerError</span>(<span class="hljs-string">&#x27;No user found&#x27;</span>);<br><br>     [err, savedTask] = <span class="hljs-keyword">await</span> <span class="hljs-title function_">to</span>(<span class="hljs-title class_">TaskModel</span>(&#123;<span class="hljs-attr">userId</span>: user.<span class="hljs-property">id</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Demo Task&#x27;</span>&#125;));<br>     <span class="hljs-keyword">if</span>(err) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomError</span>(<span class="hljs-string">&#x27;Error occurred while saving task&#x27;</span>);<br><br>    <span class="hljs-keyword">if</span>(user.<span class="hljs-property">notificationsEnabled</span>) &#123;<br>       <span class="hljs-keyword">const</span> [err] = <span class="hljs-keyword">await</span> <span class="hljs-title function_">to</span>(<span class="hljs-title class_">NotificationService</span>.<span class="hljs-title function_">sendNotification</span>(user.<span class="hljs-property">id</span>, <span class="hljs-string">&#x27;Task Created&#x27;</span>));  <br>       <span class="hljs-keyword">if</span> (err) <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;Just log the error and continue flow&#x27;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+              <h4 id="HTTP-Request-Header常见的请求头"><a href="#HTTP-Request-Header常见的请求头" class="headerlink" title="HTTP Request Header常见的请求头"></a><strong>HTTP Request Header</strong>常见的请求头</h4><ul>
+<li><strong>Accept：</strong>浏览器能够处理的内容类型</li>
+<li><strong>Accept-Charset：</strong>浏览器能够显示的字符集</li>
+<li><strong>Accept-Encoding：</strong>浏览器能够处理的压缩编码</li>
+<li><strong>Accept-Language：</strong>浏览器当前设置的语言</li>
+<li><strong>Connection：</strong>浏览器与服务器之间的连接类型</li>
+<li><strong>Cookie：</strong>当前页面设置的任何Cookie</li>
+<li><strong>Host：</strong>发出请求的页面所在的域</li>
+<li><strong>Referer：</strong>发出请求的页面的URL</li>
+<li><strong>User-Agent：</strong>浏览器的用户代理字符串</li>
+</ul>
+<h4 id="HTTP-Responses-Header常见的响应头"><a href="#HTTP-Responses-Header常见的响应头" class="headerlink" title="HTTP Responses Header常见的响应头"></a><strong>HTTP Responses Header</strong>常见的响应头</h4><ul>
+<li><strong>Date：</strong>表示消息发送的时间，时间的描述格式有rfc822定义</li>
+<li><strong>server：</strong>服务器名称</li>
+<li><strong>Connection：</strong>浏览器与服务器之间的连接类型</li>
+<li><strong>Cache-Control：</strong>控制HTTP缓存</li>
+<li><strong>Content-type：</strong>表示后面文档属于什么MIME类型</li>
+</ul>
+<p>常见的<code>Content-type</code>属性值有一下四种</p>
+<ol>
+<li><strong>application&#x2F;x-www-form-urlencoded：</strong>浏览器的原生<code>form</code>表单，如果不设置<code>enctype</code><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="属性规定在将表单数据发送到服务器之前如何对其进行编码
+">[1]</span></a></sup>属性，那么最终就会以<code>application/x-www-form-urlencoded</code>的方式提交数据。该种方式提交的数据放在<code>body</code>里面，数据按照<code>key1=val1&amp;key2=val2</code>的方式进行编码，<code>key</code>和<code>val</code>都进行了<code>URL</code>转码</li>
+<li><strong>multipart&#x2F;form-data：</strong>该种方式也是一种常见的<code>POST</code>提交方式，通常表单上传时使用</li>
+<li><strong>application&#x2F;json：</strong>服务器消息主体是序列化后的<code>JSON</code>字符串</li>
+<li><strong>text-xml：</strong>该种方式主要用来提交<code>XML</code>格式的数据</li>
+</ol>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>属性规定在将表单数据发送到服务器之前如何对其进行编码
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
               
             </div>
             <hr/>
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/js/">#js</a>
-      
-    </div>
   
 </div>
 
@@ -299,8 +312,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>捕获async/await异常</div>
-      <div>http://yoursite.com/2020/09/21/捕获async-await异常/</div>
+      <div>常见HTTP请求头和响应头</div>
+      <div>http://yoursite.com/2022/06/17/常见HTTP请求头和响应头/</div>
     </div>
     <div class="license-meta">
       
@@ -312,7 +325,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Postigita</div>
-          <div>September 21, 2020</div>
+          <div>June 17, 2022</div>
         </div>
       
       
@@ -342,18 +355,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/10/12/mac-%E5%85%B3%E9%97%AD-%E6%81%A2%E5%A4%8D%E5%BC%80%E6%9C%BADUANG/" title="mac 关闭/恢复开机DUANG">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mac 关闭/恢复开机DUANG</span>
-                        <span class="visible-mobile">Antaŭa afiŝo</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/07/23/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AAClass/" title="设计一个Class">
-                        <span class="hidden-mobile">设计一个Class</span>
+                      <a href="/2022/06/17/get-%E5%92%8C-postd-%E7%9A%84%E5%8C%BA%E5%88%AB/" title="get 和 postd 的区别">
+                        <span class="hidden-mobile">get 和 postd 的区别</span>
                         <span class="visible-mobile">Sekva afiŝo</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

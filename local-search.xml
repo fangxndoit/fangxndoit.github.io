@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>常见HTTP请求头和响应头</title>
+    <link href="/2022/06/17/%E5%B8%B8%E8%A7%81HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E5%93%8D%E5%BA%94%E5%A4%B4/"/>
+    <url>/2022/06/17/%E5%B8%B8%E8%A7%81HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%92%8C%E5%93%8D%E5%BA%94%E5%A4%B4/</url>
+    
+    <content type="html"><![CDATA[<h4 id="HTTP-Request-Header常见的请求头"><a href="#HTTP-Request-Header常见的请求头" class="headerlink" title="HTTP Request Header常见的请求头"></a><strong>HTTP Request Header</strong>常见的请求头</h4><ul><li><strong>Accept：</strong>浏览器能够处理的内容类型</li><li><strong>Accept-Charset：</strong>浏览器能够显示的字符集</li><li><strong>Accept-Encoding：</strong>浏览器能够处理的压缩编码</li><li><strong>Accept-Language：</strong>浏览器当前设置的语言</li><li><strong>Connection：</strong>浏览器与服务器之间的连接类型</li><li><strong>Cookie：</strong>当前页面设置的任何Cookie</li><li><strong>Host：</strong>发出请求的页面所在的域</li><li><strong>Referer：</strong>发出请求的页面的URL</li><li><strong>User-Agent：</strong>浏览器的用户代理字符串</li></ul><h4 id="HTTP-Responses-Header常见的响应头"><a href="#HTTP-Responses-Header常见的响应头" class="headerlink" title="HTTP Responses Header常见的响应头"></a><strong>HTTP Responses Header</strong>常见的响应头</h4><ul><li><strong>Date：</strong>表示消息发送的时间，时间的描述格式有rfc822定义</li><li><strong>server：</strong>服务器名称</li><li><strong>Connection：</strong>浏览器与服务器之间的连接类型</li><li><strong>Cache-Control：</strong>控制HTTP缓存</li><li><strong>Content-type：</strong>表示后面文档属于什么MIME类型</li></ul><p>常见的<code>Content-type</code>属性值有一下四种</p><ol><li><strong>application&#x2F;x-www-form-urlencoded：</strong>浏览器的原生<code>form</code>表单，如果不设置<code>enctype</code><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="属性规定在将表单数据发送到服务器之前如何对其进行编码">[1]</span></a></sup>属性，那么最终就会以<code>application/x-www-form-urlencoded</code>的方式提交数据。该种方式提交的数据放在<code>body</code>里面，数据按照<code>key1=val1&amp;key2=val2</code>的方式进行编码，<code>key</code>和<code>val</code>都进行了<code>URL</code>转码</li><li><strong>multipart&#x2F;form-data：</strong>该种方式也是一种常见的<code>POST</code>提交方式，通常表单上传时使用</li><li><strong>application&#x2F;json：</strong>服务器消息主体是序列化后的<code>JSON</code>字符串</li><li><strong>text-xml：</strong>该种方式主要用来提交<code>XML</code>格式的数据</li></ol><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>属性规定在将表单数据发送到服务器之前如何对其进行编码<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>get 和 postd 的区别</title>
     <link href="/2022/06/17/get-%E5%92%8C-postd-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <url>/2022/06/17/get-%E5%92%8C-postd-%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
