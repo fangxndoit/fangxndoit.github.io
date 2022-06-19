@@ -102,7 +102,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                Startseite
+                Home
               </a>
             </li>
           
@@ -114,7 +114,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                Archiv
+                Archives
               </a>
             </li>
           
@@ -126,7 +126,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                Kategorien
+                Categories
               </a>
             </li>
           
@@ -138,7 +138,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                Schlagwörter
+                Tags
               </a>
             </li>
           
@@ -150,7 +150,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                Über
+                About
               </a>
             </li>
           
@@ -214,6 +214,39 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/11/js%E5%B9%B6%E9%9B%86%E3%80%81%E4%BA%A4%E9%9B%86%E3%80%81%E5%B7%AE%E9%9B%86/" target="_self">
+          js并集、交集、差集
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/03/11/js%E5%B9%B6%E9%9B%86%E3%80%81%E4%BA%A4%E9%9B%86%E3%80%81%E5%B7%AE%E9%9B%86/" target="_self">
+        <div>
+          ES7&amp;Array.prototype.includes123456789101112&#x2F;&#x2F; 并集let union &#x3D; function(a,b)&amp;#123;	return [...a,...(b.filter(v&#x3D;&gt;!a.includes(v)))]&amp;#125;&#x2F;&#x2F; 交集let intersection &#x3D; function(a,b)&amp;#123;	return [...(a.fil
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-11 00:44" pubdate>
+              2021-03-11
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -540,46 +573,6 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2020/07/20/%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" target="_self">
-          重绘和回流
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2020/07/20/%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" target="_self">
-        <div>
-          浏览器渲染机制 浏览器采用流式布局模型（Flow Based Layout） 浏览器会把HTML解析成DOM，把CSS解析成CSSDOM，DOM和CSSDOM合并就产生了渲染树（Render Tree） 有了Render Tree，我们就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制在页面上 由于浏览器使用流式布局，对Render Tree的计算通常只需要遍历一次就可以完成
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-07-20 15:30" pubdate>
-              2020-07-20
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/css/">#css</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
@@ -609,7 +602,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -617,7 +610,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -705,7 +698,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
   </noscript>
 </body>
 </html>
