@@ -16,21 +16,21 @@
   <meta name="author" content="哧溜">
   <meta name="keywords" content="">
   
-    <meta name="description" content="图片懒加载123456789101112131415161718192021&lt;div class&#x3D;&quot;container&quot;&gt;     &lt;img src&#x3D;&quot;loading.gif&quot;  data-src&#x3D;&quot;pic.png&quot;&gt;     &lt;img src&#x3D;&quot;loading.gif&quot;  data-sr">
+    <meta name="description" content="浏览器进程 一个浏览器主线程：主要负责界面显示、用户交互、子进程管理、同时提供存储等功能 多个渲染进程：核心任务是将HTML、CSS和JavaScript转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程中 一个GPU进程：绘制UI界面 一个网络进程：主要负责页面的网络资源加载 多个插件进程：主要负责插件的运行  浏览器渲染进程的线程 GUI渲染线程：负">
 <meta property="og:type" content="article">
-<meta property="og:title" content="懒加载">
-<meta property="og:url" content="http://yoursite.com/2022/06/21/%E6%87%92%E5%8A%A0%E8%BD%BD/index.html">
+<meta property="og:title" content="进程和线程">
+<meta property="og:url" content="http://yoursite.com/2022/06/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="图片懒加载123456789101112131415161718192021&lt;div class&#x3D;&quot;container&quot;&gt;     &lt;img src&#x3D;&quot;loading.gif&quot;  data-src&#x3D;&quot;pic.png&quot;&gt;     &lt;img src&#x3D;&quot;loading.gif&quot;  data-sr">
+<meta property="og:description" content="浏览器进程 一个浏览器主线程：主要负责界面显示、用户交互、子进程管理、同时提供存储等功能 多个渲染进程：核心任务是将HTML、CSS和JavaScript转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程中 一个GPU进程：绘制UI界面 一个网络进程：主要负责页面的网络资源加载 多个插件进程：主要负责插件的运行  浏览器渲染进程的线程 GUI渲染线程：负">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-06-21T07:03:05.000Z">
-<meta property="article:modified_time" content="2022-06-21T07:30:48.307Z">
+<meta property="article:published_time" content="2022-06-24T03:40:14.000Z">
+<meta property="article:modified_time" content="2022-06-24T09:49:34.690Z">
 <meta property="article:author" content="哧溜">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>懒加载 - my blog!</title>
+  <title>进程和线程 - my blog!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="懒加载"></span>
+            <span id="subtitle" data-typed-text="进程和线程"></span>
           
         </div>
 
@@ -204,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-21 15:03" pubdate>
-          June 21, 2022 pm
+        <time datetime="2022-06-24 11:40" pubdate>
+          June 24, 2022 am
         </time>
       </span>
     
@@ -216,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          881 wörter
+          597 wörter
         
       </span>
     
@@ -227,7 +227,7 @@
         
         
         
-          8 minuten
+          5 minuten
         
       </span>
     
@@ -265,12 +265,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">懒加载</h1>
+            <h1 style="display: none">进程和线程</h1>
             
             <div class="markdown-body">
               
-              <h4 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;loading.gif&quot;</span>  <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;pic.png&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;loading.gif&quot;</span>  <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;pic.png&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;loading.gif&quot;</span>  <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;pic.png&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;loading.gif&quot;</span>  <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;pic.png&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;loading.gif&quot;</span>  <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;pic.png&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;loading.gif&quot;</span>  <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;pic.png&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">var</span> imgs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;img&#x27;</span>);</span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">lozyLoad</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> scrollTop = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">scrollTop</span> || <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollTop</span>;</span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> winHeight = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span>;</span><br><span class="language-javascript">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; imgs.<span class="hljs-property">length</span>; i++)&#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">if</span>(imgs[i].<span class="hljs-property">offsetTop</span> &lt; scrollTop + winHeight)&#123;</span><br><span class="language-javascript">      imgs[i].<span class="hljs-property">src</span> = imgs[i].<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&#x27;data-src&#x27;</span>);</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-property">onscroll</span> = <span class="hljs-title function_">lozyLoad</span>();</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
+              <h4 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h4><ul>
+<li><strong>一个浏览器主线程：</strong>主要负责界面显示、用户交互、子进程管理、同时提供存储等功能</li>
+<li><strong>多个渲染进程：</strong>核心任务是将<code>HTML</code>、<code>CSS</code>和<code>JavaScript</code>转换为用户可以与之交互的网页，排版引擎<code>Blink</code>和<code>JavaScript</code>引擎<code>V8</code>都是运行在该进程中</li>
+<li><strong>一个GPU进程：</strong>绘制<code>UI</code>界面</li>
+<li><strong>一个网络进程：</strong>主要负责页面的网络资源加载</li>
+<li><strong>多个插件进程：</strong>主要负责插件的运行</li>
+</ul>
+<h4 id="浏览器渲染进程的线程"><a href="#浏览器渲染进程的线程" class="headerlink" title="浏览器渲染进程的线程"></a>浏览器渲染进程的线程</h4><ul>
+<li><strong>GUI渲染线程：</strong>负责渲染浏览器页面，解析<code>HTML</code>、<code>CSS</code>，构建<code>DOM</code>树、构建<code>CSSOM</code>树、构建渲染树和绘制页面；当界面需要<strong>重绘</strong>或<strong>回流</strong>时，该线程会触发</li>
+<li><strong>JS引擎线程：</strong>负责处理Javascript代码，解析Javascript代码</li>
+</ul>
+<p>GUI渲染线程和JS引擎线程是互斥的，当JS引擎执行时GUI线程会被挂起，GUI更新会被保存到一个队列中等到JS引擎空闲时才被执行，如果JS执行时间过长，会造成页面渲染阻塞</p>
+<ul>
+<li><strong>事件触发线程：</strong>用来控制事件循环，当JS引擎执行JS代码，会将对应的任务添加到事件触发线程中；当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎处理</li>
+<li><strong>定时器触发线程：</strong>用于处理<strong>setInterval</strong>与<strong>setTimeout</strong></li>
+<li><strong>异步http请求线程：</strong><code>XMLHttpRequest</code>连接后会通过浏览器新开一个线程请求，当检测到状态变更时，异步线程就会产生状态变更事件，将回调函数放入事件队列中，等待JS引擎空闲后执行</li>
+</ul>
 
               
             </div>
@@ -287,8 +302,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>懒加载</div>
-      <div>http://yoursite.com/2022/06/21/懒加载/</div>
+      <div>进程和线程</div>
+      <div>http://yoursite.com/2022/06/24/进程和线程/</div>
     </div>
     <div class="license-meta">
       
@@ -300,7 +315,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Veröffentlicht am</div>
-          <div>June 21, 2022</div>
+          <div>June 24, 2022</div>
         </div>
       
       
@@ -330,18 +345,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/24/webpack-loader%E5%92%8Cplugin/" title="webpack loader和plugin">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">webpack loader和plugin</span>
-                        <span class="visible-mobile">Vorheriger</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/21/CDN/" title="CDN">
-                        <span class="hidden-mobile">CDN</span>
+                      <a href="/2022/06/24/webpack-loader%E5%92%8Cplugin/" title="webpack loader和plugin">
+                        <span class="hidden-mobile">webpack loader和plugin</span>
                         <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
