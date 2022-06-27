@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>浏览器渲染</title>
+    <link href="/2022/06/27/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/"/>
+    <url>/2022/06/27/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/</url>
+    
+    <content type="html"><![CDATA[<h4 id="浏览器渲染主要步骤"><a href="#浏览器渲染主要步骤" class="headerlink" title="浏览器渲染主要步骤"></a>浏览器渲染主要步骤</h4><ul><li>首先解析收到的文档，根据文档构建一颗<code>DOM</code>树</li><li>然后解析<code>CSS</code>，生成<code>CSSOM</code>规则树</li><li>根据<code>DOM</code>树和<code>CSSOM</code>规则树构建渲染树，渲染树的节点被称为渲染对象，渲染对象是一个包含颜色和大小等属性的矩形，渲染树和<code>DOM</code>元素相对应</li><li>当渲染对象被创建的时候，浏览器根据渲染树来进行布局，自动重排</li><li>布局阶段结束后是绘制阶段，遍历渲染树并调用渲染对象的<code>paint</code>方法将内容显示在屏幕上，绘制使用<code>UI</code>基础组建</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>进程和线程</title>
     <link href="/2022/06/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/"/>
     <url>/2022/06/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/</url>
@@ -21,7 +34,7 @@
     <link href="/2022/06/24/webpack-loader%E5%92%8Cplugin/"/>
     <url>/2022/06/24/webpack-loader%E5%92%8Cplugin/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h4 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h4><p>loader是一个转换器，将A文件进行编译成B文件，比如：A.less转换为A.css，单纯是文件转换过程</p><h4 id="plugin"><a href="#plugin" class="headerlink" title="plugin"></a>plugin</h4><p>plugin是一个扩展器，ta丰富了webpack本身，针对是loader结束后，webpack打包的整个过程，ta并不是直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点，执行广泛的任务</p>]]></content>
     
     
     
@@ -433,7 +446,7 @@
     <link href="/2020/07/01/%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <url>/2020/07/01/%E6%93%8D%E4%BD%9C%E7%AC%A6/</url>
     
-    <content type="html"><![CDATA[<h3 id="转Boolean"><a href="#转Boolean" class="headerlink" title="转Boolean"></a>转Boolean</h3><p>在条件判断时，除了 <code>undefined</code>， <code>null</code>， <code>false</code>， <code>NaN</code>， <code>&#39;&#39;</code>， <code>0</code>， <code>-0</code>，其他所有值都转为 <code>true</code>，包括所有对象</p><h3 id="操作符"><a href="#操作符" class="headerlink" title="== 操作符"></a><code>==</code> 操作符</h3><p><img src="/.com//7OVKq.png" alt="操作符"></p><p>这里来解析一道题目 <code>[] == ![] // -&gt; true</code> ，下面是这个表达式为何为 <code>true</code> 的步骤</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">typeof</span>([]) <span class="hljs-comment">// &quot;object&quot;</span><br><span class="hljs-title function_">typeof</span>(![]) <span class="hljs-comment">// &quot;boolean&quot;</span><br><br><span class="hljs-comment">// [] 转成 true，然后取反变成 false</span><br>[] == <span class="hljs-literal">false</span><br><br><span class="hljs-comment">// 根据第7 If Type(y) is Boolean, return the result of the comparison x == ToNumber(y).</span><br>[] == <span class="hljs-number">0</span><br><br><span class="hljs-comment">// 根据第9 If Type(x) is Object and Type(y) is either String or Number. return the result of the comparison(x) == y</span><br><span class="hljs-comment">// [].toString() -&gt; &#x27;&#x27;</span><br><span class="hljs-string">&#x27;&#x27;</span> == <span class="hljs-number">0</span><br><br><span class="hljs-comment">// 根据第7 </span><br><span class="hljs-number">0</span> == <span class="hljs-number">0</span> <span class="hljs-comment">// =&gt; true</span><br><br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="转Boolean"><a href="#转Boolean" class="headerlink" title="转Boolean"></a>转Boolean</h3><p>在条件判断时，除了 <code>undefined</code>， <code>null</code>， <code>false</code>， <code>NaN</code>， <code>&#39;&#39;</code>， <code>0</code>， <code>-0</code>，其他所有值都转为 <code>true</code>，包括所有对象</p><h3 id="操作符"><a href="#操作符" class="headerlink" title="== 操作符"></a><code>==</code> 操作符</h3><p><img src="/.com//7OVKq.png" alt="操作符"><br>这里来解析一道题目 <code>[] == ![] // -&gt; true</code> ，下面是这个表达式为何为 <code>true</code> 的步骤</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">typeof</span>([]) <span class="hljs-comment">// &quot;object&quot;</span><br><span class="hljs-title function_">typeof</span>(![]) <span class="hljs-comment">// &quot;boolean&quot;</span><br><br><span class="hljs-comment">// [] 转成 true，然后取反变成 false</span><br>[] == <span class="hljs-literal">false</span><br><br><span class="hljs-comment">// 根据第7 If Type(y) is Boolean, return the result of the comparison x == ToNumber(y).</span><br>[] == <span class="hljs-number">0</span><br><br><span class="hljs-comment">// 根据第9 If Type(x) is Object and Type(y) is either String or Number. return the result of the comparison(x) == y</span><br><span class="hljs-comment">// [].toString() -&gt; &#x27;&#x27;</span><br><span class="hljs-string">&#x27;&#x27;</span> == <span class="hljs-number">0</span><br><br><span class="hljs-comment">// 根据第7 </span><br><span class="hljs-number">0</span> == <span class="hljs-number">0</span> <span class="hljs-comment">// =&gt; true</span><br><br></code></pre></td></tr></table></figure>]]></content>
     
     
     

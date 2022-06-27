@@ -16,21 +16,21 @@
   <meta name="author" content="哧溜">
   <meta name="keywords" content="">
   
-    <meta name="description" content="浏览器进程 一个浏览器主线程：主要负责界面显示、用户交互、子进程管理、同时提供存储等功能 多个渲染进程：核心任务是将HTML、CSS和JavaScript转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程中 一个GPU进程：绘制UI界面 一个网络进程：主要负责页面的网络资源加载 多个插件进程：主要负责插件的运行  浏览器渲染进程的线程 GUI渲染线程：负">
+    <meta name="description" content="浏览器渲染主要步骤 首先解析收到的文档，根据文档构建一颗DOM树 然后解析CSS，生成CSSOM规则树 根据DOM树和CSSOM规则树构建渲染树，渲染树的节点被称为渲染对象，渲染对象是一个包含颜色和大小等属性的矩形，渲染树和DOM元素相对应 当渲染对象被创建的时候，浏览器根据渲染树来进行布局，自动重排 布局阶段结束后是绘制阶段，遍历渲染树并调用渲染对象的paint方法将内容显示在屏幕上，绘制使用U">
 <meta property="og:type" content="article">
-<meta property="og:title" content="进程和线程">
-<meta property="og:url" content="http://yoursite.com/2022/06/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:title" content="浏览器渲染">
+<meta property="og:url" content="http://yoursite.com/2022/06/27/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="浏览器进程 一个浏览器主线程：主要负责界面显示、用户交互、子进程管理、同时提供存储等功能 多个渲染进程：核心任务是将HTML、CSS和JavaScript转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程中 一个GPU进程：绘制UI界面 一个网络进程：主要负责页面的网络资源加载 多个插件进程：主要负责插件的运行  浏览器渲染进程的线程 GUI渲染线程：负">
+<meta property="og:description" content="浏览器渲染主要步骤 首先解析收到的文档，根据文档构建一颗DOM树 然后解析CSS，生成CSSOM规则树 根据DOM树和CSSOM规则树构建渲染树，渲染树的节点被称为渲染对象，渲染对象是一个包含颜色和大小等属性的矩形，渲染树和DOM元素相对应 当渲染对象被创建的时候，浏览器根据渲染树来进行布局，自动重排 布局阶段结束后是绘制阶段，遍历渲染树并调用渲染对象的paint方法将内容显示在屏幕上，绘制使用U">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-06-24T03:40:14.000Z">
-<meta property="article:modified_time" content="2022-06-24T09:49:34.690Z">
+<meta property="article:published_time" content="2022-06-27T04:30:14.000Z">
+<meta property="article:modified_time" content="2022-06-27T23:39:14.864Z">
 <meta property="article:author" content="哧溜">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>进程和线程 - my blog!</title>
+  <title>浏览器渲染 - my blog!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="进程和线程"></span>
+            <span id="subtitle" data-typed-text="浏览器渲染"></span>
           
         </div>
 
@@ -204,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-24 11:40" pubdate>
-          June 24, 2022 am
+        <time datetime="2022-06-27 12:30" pubdate>
+          June 27, 2022 pm
         </time>
       </span>
     
@@ -216,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          597 wörter
+          200 wörter
         
       </span>
     
@@ -227,7 +227,7 @@
         
         
         
-          5 minuten
+          2 minuten
         
       </span>
     
@@ -265,26 +265,16 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">进程和线程</h1>
+            <h1 style="display: none">浏览器渲染</h1>
             
             <div class="markdown-body">
               
-              <h4 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h4><ul>
-<li><strong>一个浏览器主线程：</strong>主要负责界面显示、用户交互、子进程管理、同时提供存储等功能</li>
-<li><strong>多个渲染进程：</strong>核心任务是将<code>HTML</code>、<code>CSS</code>和<code>JavaScript</code>转换为用户可以与之交互的网页，排版引擎<code>Blink</code>和<code>JavaScript</code>引擎<code>V8</code>都是运行在该进程中</li>
-<li><strong>一个GPU进程：</strong>绘制<code>UI</code>界面</li>
-<li><strong>一个网络进程：</strong>主要负责页面的网络资源加载</li>
-<li><strong>多个插件进程：</strong>主要负责插件的运行</li>
-</ul>
-<h4 id="浏览器渲染进程的线程"><a href="#浏览器渲染进程的线程" class="headerlink" title="浏览器渲染进程的线程"></a>浏览器渲染进程的线程</h4><ul>
-<li><strong>GUI渲染线程：</strong>负责渲染浏览器页面，解析<code>HTML</code>、<code>CSS</code>，构建<code>DOM</code>树、构建<code>CSSOM</code>树、构建渲染树和绘制页面；当界面需要<strong>重绘</strong>或<strong>回流</strong>时，该线程会触发</li>
-<li><strong>JS引擎线程：</strong>负责处理Javascript代码，解析Javascript代码</li>
-</ul>
-<p>GUI渲染线程和JS引擎线程是互斥的，当JS引擎执行时GUI线程会被挂起，GUI更新会被保存到一个队列中等到JS引擎空闲时才被执行，如果JS执行时间过长，会造成页面渲染阻塞</p>
-<ul>
-<li><strong>事件触发线程：</strong>用来控制事件循环，当JS引擎执行JS代码，会将对应的任务添加到事件触发线程中；当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎处理</li>
-<li><strong>定时器触发线程：</strong>用于处理<strong>setInterval</strong>与<strong>setTimeout</strong></li>
-<li><strong>异步http请求线程：</strong><code>XMLHttpRequest</code>连接后会通过浏览器新开一个线程请求，当检测到状态变更时，异步线程就会产生状态变更事件，将回调函数放入事件队列中，等待JS引擎空闲后执行</li>
+              <h4 id="浏览器渲染主要步骤"><a href="#浏览器渲染主要步骤" class="headerlink" title="浏览器渲染主要步骤"></a>浏览器渲染主要步骤</h4><ul>
+<li>首先解析收到的文档，根据文档构建一颗<code>DOM</code>树</li>
+<li>然后解析<code>CSS</code>，生成<code>CSSOM</code>规则树</li>
+<li>根据<code>DOM</code>树和<code>CSSOM</code>规则树构建渲染树，渲染树的节点被称为渲染对象，渲染对象是一个包含颜色和大小等属性的矩形，渲染树和<code>DOM</code>元素相对应</li>
+<li>当渲染对象被创建的时候，浏览器根据渲染树来进行布局，自动重排</li>
+<li>布局阶段结束后是绘制阶段，遍历渲染树并调用渲染对象的<code>paint</code>方法将内容显示在屏幕上，绘制使用<code>UI</code>基础组建</li>
 </ul>
 
               
@@ -302,8 +292,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>进程和线程</div>
-      <div>http://yoursite.com/2022/06/24/进程和线程/</div>
+      <div>浏览器渲染</div>
+      <div>http://yoursite.com/2022/06/27/浏览器渲染/</div>
     </div>
     <div class="license-meta">
       
@@ -315,7 +305,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Veröffentlicht am</div>
-          <div>June 24, 2022</div>
+          <div>June 27, 2022</div>
         </div>
       
       
@@ -345,18 +335,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/27/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/" title="浏览器渲染">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">浏览器渲染</span>
-                        <span class="visible-mobile">Vorheriger</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/24/webpack-loader%E5%92%8Cplugin/" title="webpack loader和plugin">
-                        <span class="hidden-mobile">webpack loader和plugin</span>
+                      <a href="/2022/06/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/" title="进程和线程">
+                        <span class="hidden-mobile">进程和线程</span>
                         <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,16 +16,16 @@
   <meta name="author" content="哧溜">
   <meta name="keywords" content="">
   
-    <meta name="description" content="转Boolean在条件判断时，除了 undefined， null， false， NaN， &#39;&#39;， 0， -0，其他所有值都转为 true，包括所有对象 &#x3D;&#x3D; 操作符 这里来解析一道题目 [] &#x3D;&#x3D; ![] &#x2F;&#x2F; -&gt; true ，下面是这个表达式为何为 true 的步骤 12345678910111213141516typeof([]) &#x2F;&#x2F; &quot;object&amp;q">
+    <meta name="description" content="转Boolean在条件判断时，除了 undefined， null， false， NaN， &#39;&#39;， 0， -0，其他所有值都转为 true，包括所有对象 &#x3D;&#x3D; 操作符这里来解析一道题目 [] &#x3D;&#x3D; ![] &#x2F;&#x2F; -&gt; true ，下面是这个表达式为何为 true 的步骤 12345678910111213141516typeof([]) &#x2F;&#x2F; &quot;object&amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作符">
 <meta property="og:url" content="http://yoursite.com/2020/07/01/%E6%93%8D%E4%BD%9C%E7%AC%A6/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="转Boolean在条件判断时，除了 undefined， null， false， NaN， &#39;&#39;， 0， -0，其他所有值都转为 true，包括所有对象 &#x3D;&#x3D; 操作符 这里来解析一道题目 [] &#x3D;&#x3D; ![] &#x2F;&#x2F; -&gt; true ，下面是这个表达式为何为 true 的步骤 12345678910111213141516typeof([]) &#x2F;&#x2F; &quot;object&amp;q">
+<meta property="og:description" content="转Boolean在条件判断时，除了 undefined， null， false， NaN， &#39;&#39;， 0， -0，其他所有值都转为 true，包括所有对象 &#x3D;&#x3D; 操作符这里来解析一道题目 [] &#x3D;&#x3D; ![] &#x2F;&#x2F; -&gt; true ，下面是这个表达式为何为 true 的步骤 12345678910111213141516typeof([]) &#x2F;&#x2F; &quot;object&amp;qu">
 <meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/.com//7OVKq.png">
 <meta property="article:published_time" content="2020-07-01T07:17:00.000Z">
-<meta property="article:modified_time" content="2020-07-01T07:35:51.077Z">
+<meta property="article:modified_time" content="2022-06-27T04:44:44.836Z">
 <meta property="article:author" content="哧溜">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
@@ -273,8 +273,7 @@
             <div class="markdown-body">
               
               <h3 id="转Boolean"><a href="#转Boolean" class="headerlink" title="转Boolean"></a>转Boolean</h3><p>在条件判断时，除了 <code>undefined</code>， <code>null</code>， <code>false</code>， <code>NaN</code>， <code>&#39;&#39;</code>， <code>0</code>， <code>-0</code>，其他所有值都转为 <code>true</code>，包括所有对象</p>
-<h3 id="操作符"><a href="#操作符" class="headerlink" title="== 操作符"></a><code>==</code> 操作符</h3><p><img src="/.com//7OVKq.png" srcset="/img/loading.gif" lazyload alt="操作符"></p>
-<p>这里来解析一道题目 <code>[] == ![] // -&gt; true</code> ，下面是这个表达式为何为 <code>true</code> 的步骤</p>
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="== 操作符"></a><code>==</code> 操作符</h3><p><img src="/.com//7OVKq.png" srcset="/img/loading.gif" lazyload alt="操作符"><br>这里来解析一道题目 <code>[] == ![] // -&gt; true</code> ，下面是这个表达式为何为 <code>true</code> 的步骤</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">typeof</span>([]) <span class="hljs-comment">// &quot;object&quot;</span><br><span class="hljs-title function_">typeof</span>(![]) <span class="hljs-comment">// &quot;boolean&quot;</span><br><br><span class="hljs-comment">// [] 转成 true，然后取反变成 false</span><br>[] == <span class="hljs-literal">false</span><br><br><span class="hljs-comment">// 根据第7 If Type(y) is Boolean, return the result of the comparison x == ToNumber(y).</span><br>[] == <span class="hljs-number">0</span><br><br><span class="hljs-comment">// 根据第9 If Type(x) is Object and Type(y) is either String or Number. return the result of the comparison(x) == y</span><br><span class="hljs-comment">// [].toString() -&gt; &#x27;&#x27;</span><br><span class="hljs-string">&#x27;&#x27;</span> == <span class="hljs-number">0</span><br><br><span class="hljs-comment">// 根据第7 </span><br><span class="hljs-number">0</span> == <span class="hljs-number">0</span> <span class="hljs-comment">// =&gt; true</span><br><br></code></pre></td></tr></table></figure>
 
 
