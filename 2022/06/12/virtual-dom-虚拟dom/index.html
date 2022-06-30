@@ -16,15 +16,15 @@
   <meta name="author" content="哧溜">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Virtual DOMVirtual DOM( 虚拟dom ) 是一个javascript对象，通过对象的方式表示dom结构，将页面的状态抽象为js对象的形式，搭配不同的渲染工具，实现跨平台的能力。通过事务处理机制，将多次dom修改的结果一次性的更新到页面上，有效的减少页面的渲染次数，和减少修改dom的重绘和重排次数，提高渲染性能. ####React-Fiber React V15在渲染时，会递">
+    <meta name="description" content="Virtual DomVirtual DOM( 虚拟dom ) 是一个javascript对象，通过对象的方式表示dom结构，将页面的状态抽象为js对象的形式，搭配不同的渲染工具，实现跨平台的能力。通过事务处理机制，将多次dom修改的结果一次性的更新到页面上，有效的减少页面的渲染次数，和减少修改dom的重绘和重排次数，提高渲染性能 React-FiberReact V15在渲染时，会递归比对Vir">
 <meta property="og:type" content="article">
 <meta property="og:title" content="virtual dom (虚拟dom)">
 <meta property="og:url" content="http://yoursite.com/2022/06/12/virtual-dom-%E8%99%9A%E6%8B%9Fdom/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="Virtual DOMVirtual DOM( 虚拟dom ) 是一个javascript对象，通过对象的方式表示dom结构，将页面的状态抽象为js对象的形式，搭配不同的渲染工具，实现跨平台的能力。通过事务处理机制，将多次dom修改的结果一次性的更新到页面上，有效的减少页面的渲染次数，和减少修改dom的重绘和重排次数，提高渲染性能. ####React-Fiber React V15在渲染时，会递">
+<meta property="og:description" content="Virtual DomVirtual DOM( 虚拟dom ) 是一个javascript对象，通过对象的方式表示dom结构，将页面的状态抽象为js对象的形式，搭配不同的渲染工具，实现跨平台的能力。通过事务处理机制，将多次dom修改的结果一次性的更新到页面上，有效的减少页面的渲染次数，和减少修改dom的重绘和重排次数，提高渲染性能 React-FiberReact V15在渲染时，会递归比对Vir">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-06-12T03:40:02.000Z">
-<meta property="article:modified_time" content="2022-06-12T04:33:56.174Z">
+<meta property="article:modified_time" content="2022-06-30T06:17:17.368Z">
 <meta property="article:author" content="哧溜">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -216,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          1.3k words
         
       </span>
     
@@ -227,7 +227,7 @@
         
         
         
-          13 mins
+          11 mins
         
       </span>
     
@@ -269,16 +269,10 @@
             
             <div class="markdown-body">
               
-              <h4 id="Virtual-DOM"><a href="#Virtual-DOM" class="headerlink" title="Virtual DOM"></a><code>Virtual DOM</code></h4><p><code>Virtual DOM</code>( 虚拟dom ) 是一个<code>javascript</code>对象，通过对象的方式表示dom结构，将页面的状态抽象为js对象的形式，搭配不同的渲染工具，实现跨平台的能力。通过事务处理机制，将多次dom修改的结果一次性的更新到页面上，有效的减少页面的渲染次数，和减少修改dom的重绘和重排次数，提高渲染性能.</p>
-<p>####<code>React-Fiber</code></p>
-<p><code>React V15</code>在渲染时，会递归比对<code>Virtual DOM</code>树，找出需要变动的节点，然后同步更新它们。这个过程期间，<code>React</code>会占据浏览器资源，这会导致用户触发的事件得不到响应，并且会导致掉帧，用户感觉卡顿</p>
-<p><code>Fiber</code>也称协程，协程本身没有并发和并行的能力，它只是一种控制流程让出的机制。让出<code>CPU</code>的执行权，让<code>cpu</code>能在这段时间执行其他操作。渲染的过程可以被中断，可以将控制权交回浏览器，让位给高优先级的任务，浏览器空闲后再恢复渲染。</p>
-<h5 id="虚拟dom的解析过程"><a href="#虚拟dom的解析过程" class="headerlink" title="虚拟dom的解析过程"></a>虚拟dom的解析过程</h5><ul>
-<li>将要插入文档的DOM树结构进行分析，转换为js对象树，保存js对象树，把dom片段插入到文档中</li>
-<li>当页面状态发生变化的时候，根据变更的状态，重新构建一棵对象树，然后将新旧两棵对象树进行比较，记录差异</li>
-<li>最后更新视图，将差异的地方应用到真正的dom树中去</li>
-</ul>
-<h5 id="diff算法的原理"><a href="#diff算法的原理" class="headerlink" title="diff算法的原理"></a><code>diff</code>算法的原理</h5><p>新老虚拟dom对比时：</p>
+              <h4 id="Virtual-Dom"><a href="#Virtual-Dom" class="headerlink" title="Virtual Dom"></a><code>Virtual Dom</code></h4><p><code>Virtual DOM</code>( 虚拟dom ) 是一个<code>javascript</code>对象，通过对象的方式表示dom结构，将页面的状态抽象为js对象的形式，搭配不同的渲染工具，实现跨平台的能力。通过事务处理机制，将多次dom修改的结果一次性的更新到页面上，有效的减少页面的渲染次数，和减少修改dom的重绘和重排次数，提高渲染性能</p>
+<h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React-Fiber"></a><code>React-Fiber</code></h4><p><code>React V15</code>在渲染时，会递归比对<code>Virtual DOM</code>树，找出需要变动的节点，然后同步更新它们。这个过程期间，<code>React</code>会占据浏览器资源，这会导致用户触发的事件得不到响应，并且会导致掉帧，用户感觉卡顿</p>
+<p><code>Fiber</code>也称协程，协程本身没有并发和并行的能力，它只是一种控制流程让出的机制。让出<code>CPU</code>的执行权，让<code>cpu</code>能在这段时间执行其他操作。渲染的过程可以被中断，可以将控制权交回浏览器，让位给高优先级的任务，浏览器空闲后再恢复渲染</p>
+<h4 id="diff算法的原理"><a href="#diff算法的原理" class="headerlink" title="diff算法的原理"></a><code>diff</code>算法的原理</h4><p>新老虚拟dom对比时：</p>
 <ul>
 <li>首页，对比节点本身，判断是否为同一节点，如果不是，则删除该节点，重新创建节点进行替换</li>
 <li>如果是相同节点，进行patchVnode，处理子节点，如果其中新的没有children字段子节点，将久的子节点删除</li>
@@ -286,8 +280,7 @@
 <li>匹配时，找到相同的子节点，递归比较子节点</li>
 </ul>
 <p>在<code>diff</code>中，只对同层的子节点进行比较，放弃跨级节点比较，使得时间复杂从<code>O(n3)</code>降低到<code>O(n)</code>，只有当新旧children都为多个子节点时才需要用核心的<code>diff</code>算法进行同层比较</p>
-<p>#####<code>Vue</code>中<code>key</code>的作用</p>
-<p>vue 中 key 值的作用可以分为两种情况来考虑：</p>
+<h4 id="Vue中key的作用"><a href="#Vue中key的作用" class="headerlink" title="Vue中key的作用"></a><code>Vue</code>中<code>key</code>的作用</h4><p>vue 中 key 值的作用可以分为两种情况来考虑：</p>
 <ul>
 <li>第一种情况是 v-if 中使用 key。由于 Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。因此当使用 v-if 来实现元素切换的时候，如果切换前后含有相同类型的元素，那么这个元素就会被复用。如果是相同的 input 元素，那么切换前后用户的输入不会被清除掉，这样是不符合需求的。因此可以通过使用 key 来唯一的标识一个元素，这个情况下，使用 key 的元素不会被复用。这个时候 key 的作用是用来标识一个独立的元素</li>
 <li>第二种情况是 v-for 中使用 key。用 v-for 更新已渲染过的元素列表时，它默认使用“就地复用”的策略。如果数据项的顺序发生了改变，Vue 不会移动 DOM 元素来匹配数据项的顺序，而是简单复用此处的每个元素。因此通过为每个列表项提供一个 key 值，来以便 Vue 跟踪元素的身份，从而高效的实现复用。这个时候 key 的作用是为了高效的更新渲染虚拟 DOM</li>
@@ -297,7 +290,7 @@
 <li>更准确：因为带 key 就不是就地复用了，在 sameNode 函数a.key &#x3D;&#x3D;&#x3D; b.key对比中可以避免就地复用的情况。所以会更加准确</li>
 <li>更快速：利用 key 的唯一性生成 map 对象来获取对应节点，比遍历方式更快</li>
 </ul>
-<p>使用index 作为 key和没写基本上没区别，因为不管数组的顺序怎么颠倒，index 都是 0, 1, 2…这样排列，导致 Vue 会复用错误的旧子节点，做很多额外的工作。</p>
+<p>使用index 作为 key和没写基本上没区别，因为不管数组的顺序怎么颠倒，index 都是 0, 1, 2…这样排列，导致 Vue 会复用错误的旧子节点，做很多额外的工作</p>
 
               
             </div>
