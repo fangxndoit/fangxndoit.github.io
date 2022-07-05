@@ -16,15 +16,15 @@
   <meta name="author" content="哧溜">
   <meta name="keywords" content="">
   
-    <meta name="description" content="防抖事件高频触发事件后n秒内函数只会执行一次，如果n秒内高频事件再次触发，则重新计算时间 思路每次触发事件时都取消之前的延时调用方法 12345678910111213141516171819function debounce(fn,wait) &amp;#123;  let timeout &#x3D; null; &#x2F;&#x2F;创建一个标记用来存放定时器的返回值  return function() &amp;#123;">
+    <meta name="description" content="防抖事件高频触发事件后n秒内函数只会执行一次，如果n秒内高频事件再次触发，则重新计算时间 每次触发事件时都取消之前的延时调用方法 12345678910111213141516171819function debounce(fn,wait) &amp;#123;  let timeout &#x3D; null; &#x2F;&#x2F;创建一个标记用来存放定时器的返回值  return function() &amp;#123;    le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="防抖和节流">
 <meta property="og:url" content="http://yoursite.com/2020/07/10/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/index.html">
 <meta property="og:site_name" content="my blog!">
-<meta property="og:description" content="防抖事件高频触发事件后n秒内函数只会执行一次，如果n秒内高频事件再次触发，则重新计算时间 思路每次触发事件时都取消之前的延时调用方法 12345678910111213141516171819function debounce(fn,wait) &amp;#123;  let timeout &#x3D; null; &#x2F;&#x2F;创建一个标记用来存放定时器的返回值  return function() &amp;#123;">
+<meta property="og:description" content="防抖事件高频触发事件后n秒内函数只会执行一次，如果n秒内高频事件再次触发，则重新计算时间 每次触发事件时都取消之前的延时调用方法 12345678910111213141516171819function debounce(fn,wait) &amp;#123;  let timeout &#x3D; null; &#x2F;&#x2F;创建一个标记用来存放定时器的返回值  return function() &amp;#123;    le">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-07-10T06:54:10.000Z">
-<meta property="article:modified_time" content="2022-06-22T09:38:28.941Z">
+<meta property="article:modified_time" content="2022-07-03T09:36:21.001Z">
 <meta property="article:author" content="哧溜">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
@@ -113,7 +113,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                Hejmpaĝo
+                Startseite
               </a>
             </li>
           
@@ -125,7 +125,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                Arkivoj
+                Archiv
               </a>
             </li>
           
@@ -137,7 +137,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                Kategorio
+                Kategorien
               </a>
             </li>
           
@@ -149,7 +149,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                Etikedoj
+                Schlagwörter
               </a>
             </li>
           
@@ -161,7 +161,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                Pri
+                Über
               </a>
             </li>
           
@@ -217,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k vortoj
+          1.1k wörter
         
       </span>
     
@@ -228,7 +228,7 @@
         
         
         
-          10 minutoj
+          9 minuten
         
       </span>
     
@@ -271,12 +271,12 @@
             <div class="markdown-body">
               
               <h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>事件高频触发事件后n秒内函数只会执行一次，如果n秒内高频事件再次触发，则重新计算时间</p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>每次触发事件时都取消之前的延时调用方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn,wait</span>) &#123;<br>  <span class="hljs-keyword">let</span> timeout = <span class="hljs-literal">null</span>; <span class="hljs-comment">//创建一个标记用来存放定时器的返回值</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">let</span> context = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">let</span> args = [...<span class="hljs-variable language_">arguments</span>];<br>    <span class="hljs-keyword">if</span>(timeout)&#123;<br>      <span class="hljs-built_in">clearTimeout</span>(timeout); <span class="hljs-comment">// 每当用户输入的时候把前一个 setTimeout clear 掉</span><br>      timeout = <span class="hljs-literal">null</span>;<br>    &#125;<br>    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123; <span class="hljs-comment">// 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数</span><br> 		fn.<span class="hljs-title function_">apply</span>(context, args);<br>    &#125;, wait)<br>  &#125;;<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHi</span>(<span class="hljs-params"></span>) &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;防抖成功&#x27;</span>)<br>&#125;<br><span class="hljs-keyword">var</span> inp = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;inp&#x27;</span>);<br>inp.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;input&#x27;</span>, <span class="hljs-title function_">debounce</span>(sayHi, <span class="hljs-number">300</span>)); <span class="hljs-comment">// 防抖</span><br></code></pre></td></tr></table></figure>
+<p>每次触发事件时都取消之前的延时调用方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn,wait</span>) &#123;<br>  <span class="hljs-keyword">let</span> timeout = <span class="hljs-literal">null</span>; <span class="hljs-comment">//创建一个标记用来存放定时器的返回值</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">let</span> context = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">let</span> args = <span class="hljs-variable language_">arguments</span>;<br>    <span class="hljs-keyword">if</span>(timeout)&#123;<br>      <span class="hljs-built_in">clearTimeout</span>(timeout); <span class="hljs-comment">// 每当用户输入的时候把前一个 setTimeout clear 掉</span><br>      timeout = <span class="hljs-literal">null</span>;<br>    &#125;<br>    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123; <span class="hljs-comment">// 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数</span><br> 		fn.<span class="hljs-title function_">apply</span>(context, args);<br>    &#125;, wait)<br>  &#125;;<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHi</span>(<span class="hljs-params"></span>) &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;防抖成功&#x27;</span>)<br>&#125;<br><span class="hljs-keyword">var</span> inp = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;inp&#x27;</span>);<br>inp.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;input&#x27;</span>, <span class="hljs-title function_">debounce</span>(sayHi, <span class="hljs-number">300</span>)); <span class="hljs-comment">// 防抖</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率</p>
-<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>每次触发事件时都判断当前是否有等待执行的延时函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">fn, wait</span>) &#123;<br>	<span class="hljs-keyword">let</span> timeout = <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> context = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">let</span> args = [...<span class="hljs-variable language_">arguments</span>];<br>    <span class="hljs-keyword">if</span>(!timeout)&#123;<br>      timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        fn.<span class="hljs-title function_">apply</span>(context, args);<br>        timeout = <span class="hljs-literal">null</span>;<br>      &#125;, wait)<br>    &#125;<br>  &#125;<br>  <br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHi</span>(<span class="hljs-params">e</span>) &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">innerWidth</span>, e.<span class="hljs-property">target</span>.<span class="hljs-property">innerHeight</span>);<br>&#125;<br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;resize&#x27;</span>, <span class="hljs-title function_">throttle</span>(sayHi, <span class="hljs-number">300</span>));<br></code></pre></td></tr></table></figure>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>每次触发事件时都判断当前是否有等待执行的延时函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">fn, wait</span>) &#123;<br>	<span class="hljs-keyword">let</span> timeout = <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> context = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">let</span> args = <span class="hljs-variable language_">arguments</span>;<br>    <span class="hljs-keyword">if</span>(!timeout)&#123;<br>      timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        fn.<span class="hljs-title function_">apply</span>(context, args);<br>        timeout = <span class="hljs-literal">null</span>;<br>      &#125;, wait)<br>    &#125;<br>  &#125;<br>  <br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHi</span>(<span class="hljs-params">e</span>) &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">innerWidth</span>, e.<span class="hljs-property">target</span>.<span class="hljs-property">innerHeight</span>);<br>&#125;<br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;resize&#x27;</span>, <span class="hljs-title function_">throttle</span>(sayHi, <span class="hljs-number">300</span>));<br></code></pre></td></tr></table></figure>
 
 
               
@@ -307,19 +307,19 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Aŭtoro</div>
+          <div>Beitragsautor</div>
           <div>哧溜</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Postigita</div>
+          <div>Veröffentlicht am</div>
           <div>July 10, 2020</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Lizenta</div>
+        <div>Urheberrechtshinweis</div>
         <div>
           
             
@@ -347,7 +347,7 @@
                       <a href="/2020/07/20/%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" title="重绘和回流">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">重绘和回流</span>
-                        <span class="visible-mobile">Antaŭa afiŝo</span>
+                        <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
                   </article>
@@ -356,7 +356,7 @@
                     
                       <a href="/2020/07/06/%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/" title="压缩图片">
                         <span class="hidden-mobile">压缩图片</span>
-                        <span class="visible-mobile">Sekva afiŝo</span>
+                        <span class="visible-mobile">Nächster</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -375,7 +375,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Enhavtabelo</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Inhaltsverzeichnis</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -429,7 +429,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Serĉi</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Suchen</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -437,7 +437,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">ŝlosivorto</label>
+          <label data-error="x" data-success="v" for="local-search-input">Stichwort</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -656,7 +656,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blogo funkcias plej bone kun JavaScript ebligita</div>
+    <div class="noscript-warning">Blog funktioniert am besten mit aktiviertem JavaScript</div>
   </noscript>
 </body>
 </html>
