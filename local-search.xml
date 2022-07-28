@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>css 小tips</title>
+    <link href="/2022/07/28/css-%E5%B0%8Ftips/"/>
+    <url>/2022/07/28/css-%E5%B0%8Ftips/</url>
+    
+    <content type="html"><![CDATA[<h4 id="图片img占位"><a href="#图片img占位" class="headerlink" title="图片img占位"></a>图片img占位</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-selector-class">.banner</span>&#123;<br><span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">overflow</span>: hidden;<br><span class="hljs-attribute">padding</span>-boottom: (height/width)*<span class="hljs-number">100%</span>;<br><span class="hljs-comment">//.banner__img</span><br>  &amp;__img&#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h4 id="字体缩小"><a href="#字体缩小" class="headerlink" title="字体缩小"></a>字体缩小</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-selector-class">.font</span>&#123;<br><span class="hljs-attribute">font</span>-siez: <span class="hljs-number">20px</span>;<br>  <span class="hljs-attribute">transform</span>: scale(.<span class="hljs-number">5</span>, .<span class="hljs-number">5</span>);<br>  <span class="hljs-attribute">transform-origin</span>: center;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>函数/方法注释</title>
+    <link href="/2022/07/14/%E5%87%BD%E6%95%B0:%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A/"/>
+    <url>/2022/07/14/%E5%87%BD%E6%95%B0:%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 函数描述</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">string</span>&#125; p1 参数1的说明</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">string</span>&#125; p2 参数2的说明，比较长</span><br><span class="hljs-comment"> *     那就换行了.</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">number=</span>&#125; p3 参数3的说明（可选）</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> &#123;<span class="hljs-type">Object</span>&#125; 返回值描述</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params">p1, p2, p3</span>) &#123;<br>    <span class="hljs-keyword">var</span> p3 = p3 || <span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">return</span> &#123;<br>        <span class="hljs-attr">p1</span>: p1,<br>        <span class="hljs-attr">p2</span>: p2,<br>        <span class="hljs-attr">p3</span>: p3<br>    &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>手写代码</title>
     <link href="/2022/07/07/%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/"/>
     <url>/2022/07/07/%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</url>
